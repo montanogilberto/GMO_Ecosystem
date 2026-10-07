@@ -1,0 +1,26 @@
+{
+  "registrationTitle": "Guarda tu análisis y recibe seguimiento personal",
+  "registrationIntro": "Déjanos tus datos: el equipo de GMO te ayudará a poner tu negocio a operar en GMO, y recibes más tokens de IA para seguir afinando tu análisis.",
+  "fullName": "Nombre completo",
+  "phone": "WhatsApp / teléfono",
+  "email": "Correo",
+  "companyName": "Nombre del negocio",
+  "message": "Mensaje",
+  "consent": "Acepto que GMO guarde estos datos y me contacte sobre mi negocio.",
+  "sendRegistration": "Guardar y continuar",
+  "sendContact": "Enviar mensaje",
+  "sending": "Enviando…",
+  "doneRegistration": "¡Listo! Tu análisis quedó guardado, tus tokens aumentaron y el equipo de GMO te contactará.",
+  "doneContact": "Mensaje recibido. El equipo de GMO te contactará pronto.",
+  "contactNote": "Solo usamos tus datos para contactarte sobre GMO.",
+  "errors": {
+    "name": "Escribe tu nombre.",
+    "contact": "Deja un WhatsApp/teléfono o un correo para poder contactarte.",
+    "message": "Escribe tu mensaje.",
+    "consent": "Acepta que te contactemos.",
+    "invalid": "Revisa el correo o el teléfono.",
+    "tooMany": "Demasiados envíos desde tu conexión. Intenta más tarde.",
+    "generic": "No pudimos guardarlo. Intenta de nuevo.",
+    "network": "La plataforma de GMO no está disponible en este momento. Intenta más tarde."
+  }
+}

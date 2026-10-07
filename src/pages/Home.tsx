@@ -24,6 +24,7 @@ import Rewards from "../sections/11-rewards/Rewards";
 import Technology from "../sections/12-technology/Technology";
 import Roadmap from "../sections/13-roadmap/Roadmap";
 import Vision from "../sections/14-vision/Vision";
+import Contact from "../sections/15-contact/Contact";
 
 /** The whole site is one Ionic page; each section lives in src/sections/<NN-name>/. */
 export default function Home({ match, history, location }: RouteComponentProps<{ lang?: string }>) {
@@ -82,6 +83,7 @@ export default function Home({ match, history, location }: RouteComponentProps<{
             <Technology />
             <Roadmap />
             <Vision />
+            <Contact />
           </main>
           <Footer />
         </IonContent>

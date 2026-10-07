@@ -1,0 +1,7 @@
+{
+  "label": "Tokens de IA",
+  "registered": "registrado",
+  "remaining": "Te quedan {n} tokens para análisis. Las preguntas repetidas no cuestan.",
+  "exhausted": "Usaste tus tokens gratis. Regístrate abajo para continuar — es gratis.",
+  "exhaustedRegistered": "Usaste tus tokens. El equipo de GMO te contactará para continuar."
+}

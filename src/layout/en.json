@@ -10,10 +10,15 @@
     "architecture": "Architecture",
     "roadmap": "Roadmap",
     "language": "Language",
-    "menu": "Open menu"
+    "menu": "Open menu",
+    "contact": "Contact",
+    "login": "Log in"
   },
   "footer": {
     "notifications": "Notifications",
-    "agents": "AI Agents"
+    "agents": "AI Agents",
+    "visits": "visits",
+    "today": "today",
+    "visitorsTitle": "Visits to this page"
   }
 }

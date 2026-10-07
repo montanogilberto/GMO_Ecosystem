@@ -1,0 +1,26 @@
+{
+  "registrationTitle": "Save your analysis and get personal follow-up",
+  "registrationIntro": "Leave your details: the GMO team will help you get your business running in GMO, and you get more AI tokens to keep refining your analysis.",
+  "fullName": "Full name",
+  "phone": "WhatsApp / phone",
+  "email": "Email",
+  "companyName": "Business name",
+  "message": "Message",
+  "consent": "I agree that GMO may store these details and contact me about my business.",
+  "sendRegistration": "Save and continue",
+  "sendContact": "Send message",
+  "sending": "Sending…",
+  "doneRegistration": "Done! Your analysis is saved, your token allowance went up, and the GMO team will contact you.",
+  "doneContact": "Message received. The GMO team will contact you soon.",
+  "contactNote": "We only use your details to contact you about GMO.",
+  "errors": {
+    "name": "Write your name.",
+    "contact": "Leave a WhatsApp/phone or an email so we can reach you.",
+    "message": "Write your message.",
+    "consent": "Please accept being contacted.",
+    "invalid": "Check the email or phone number.",
+    "tooMany": "Too many submissions from your connection. Try again later.",
+    "generic": "We couldn't save it. Please try again.",
+    "network": "The GMO platform isn't reachable right now. Please try again later."
+  }
+}

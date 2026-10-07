@@ -1,0 +1,7 @@
+{
+  "label": "AI tokens",
+  "registered": "registered",
+  "remaining": "{n} tokens left for analyses. Repeated questions are free.",
+  "exhausted": "You've used your free tokens. Register below to keep going — it's free.",
+  "exhaustedRegistered": "You've used your tokens. The GMO team will contact you to continue."
+}

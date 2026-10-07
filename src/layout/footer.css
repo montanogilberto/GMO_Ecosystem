@@ -1,3 +1,4 @@
 /* Page footer. */
 .footer { border-top: 1px solid var(--line); padding: 28px 0; font-size: .88rem; }
 .footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.visit-counter { font-family: var(--mono); font-size: .8rem; color: var(--pos); }

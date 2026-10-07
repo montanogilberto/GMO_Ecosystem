@@ -12,4 +12,5 @@ export const NAV_LINKS: { id: string; key?: NavKey; label?: string }[] = [
   { id: "apps", label: "Apps" },
   { id: "rewards", label: "Rewards" },
   { id: "roadmap", key: "roadmap" },
+  { id: "contact", key: "contact" },
 ];

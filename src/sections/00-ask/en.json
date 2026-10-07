@@ -35,7 +35,9 @@
       "network": "The Factory agent isn't reachable right now. Please try again later.",
       "timeout": "The analysis took too long. Please try again.",
       "rateLimited": "Too many analyses from your connection. Please try again later.",
-      "generic": "Something went wrong analyzing your request. Please try again."
+      "generic": "Something went wrong analyzing your request. Please try again.",
+      "tokenLimit": "You've used your free AI tokens. Register below (it's free) to keep going.",
+      "tokenLimitRegistered": "You've used your AI tokens. The GMO team will contact you to continue."
     },
     "labels": {
       "understood": "What we understood",

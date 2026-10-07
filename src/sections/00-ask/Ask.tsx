@@ -5,7 +5,10 @@
 // message is answered with the agent's reuse / extend / create analysis or a
 // follow-up question. The API address comes from VITE_INTAKE_API_URL (see .env.example).
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import LeadForm, { type AnalysisSummary } from "../../components/lead-form/LeadForm";
+import TokenBar from "../../components/token-bar/TokenBar";
 import { useLang, useText } from "../../lib/i18n";
+import { api, API_URL, visitorId, type Allowance } from "../../lib/site";
 import en from "./en.json";
 import es from "./es.json";
 import { startDictation, type Dictation } from "./dictation";
@@ -13,7 +16,6 @@ import Result from "./Result";
 import type { IntakeResponse } from "./types";
 import "./ask.css";
 
-const API_URL = (import.meta.env.VITE_INTAKE_API_URL || "http://localhost:8090").replace(/\/$/, "");
 const MAX_CHARS = 2000;
 const TIMEOUT_MS = 100_000;
 const STEP_MS = 6000;
@@ -51,6 +53,9 @@ export default function Ask() {
   const [loadingStep, setLoadingStep] = useState(0);
   const [listening, setListening] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
+  const [allowance, setAllowance] = useState<Allowance | null>(null); // AI token bar
+  const [limitReached, setLimitReached] = useState(false);
+  const [justRegistered, setJustRegistered] = useState(false); // keep the "thank you" visible
 
   const dictation = useRef<Dictation | null>(null);
   const starting = useRef(false);
@@ -95,6 +100,11 @@ export default function Ask() {
   // Stop the microphone if the page goes away mid-dictation.
   useEffect(() => () => dictation.current?.cancel(), []);
 
+  /* ---------- AI token allowance ---------- */
+  useEffect(() => {
+    api<Allowance>(`/site/usage?visitorId=${encodeURIComponent(visitorId())}`).then(setAllowance).catch(() => { /* bar stays hidden */ });
+  }, []);
+
   /* ---------- Conversation ---------- */
   useEffect(() => {
     if (!loading) return;
@@ -128,13 +138,21 @@ export default function Ask() {
       const response = await fetch(`${API_URL}/intake/analyze`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text: conversationText(history, message, d.labels), url: website.trim(), language: lang }),
+        body: JSON.stringify({ text: conversationText(history, message, d.labels), url: website.trim(), language: lang, visitorId: visitorId() }),
         signal: controller.signal,
       });
+      if (response.status === 402) {
+        const detail = (await response.json().catch(() => null))?.detail;
+        if (detail?.allowance) setAllowance(detail.allowance);
+        setLimitReached(true);
+        return fail(detail?.allowance?.registered ? d.errors.tokenLimitRegistered : d.errors.tokenLimit);
+      }
       if (response.status === 429) return fail(d.errors.rateLimited);
       if (response.status === 504) return fail(d.errors.timeout);
       if (!response.ok) return fail(d.errors.generic);
-      answer({ role: "factory", data: (await response.json()) as IntakeResponse });
+      const data = (await response.json()) as IntakeResponse & { allowance?: Allowance };
+      if (data.allowance) setAllowance(data.allowance);
+      answer({ role: "factory", data });
     } catch (err) {
       fail((err as Error).name === "AbortError" ? d.errors.timeout : d.errors.network);
     } finally {
@@ -158,6 +176,18 @@ export default function Ask() {
   };
 
   const micLabel = listening ? d.mic.stop : d.mic.start;
+  // The latest analysis, saved with the lead so the GMO team knows what the business needs.
+  const lastAnalysis: AnalysisSummary | null = (() => {
+    for (let i = messages.length - 1; i >= 0; i--) {
+      const m = messages[i];
+      if (m.role === "factory" && m.data.status === "ok") {
+        const a = m.data.analysis;
+        return { businessType: a.businessType, readiness: a.onboardingReadiness, summary: a.summary };
+      }
+    }
+    return null;
+  })();
+  const offerRegistration = justRegistered || (!allowance?.registered && (limitReached || lastAnalysis !== null));
   const started = messages.length > 0 || loading;
 
   return (
@@ -209,6 +239,18 @@ export default function Ask() {
         </label>
 
         {(listening || notice) && <p className={`ask-status${listening ? " listening" : ""}`}>{listening ? d.mic.listening : notice}</p>}
+
+        <TokenBar allowance={allowance} />
+
+        {offerRegistration && (
+          <div className="ask-register">
+            <LeadForm source="ask_factory" analysis={lastAnalysis} onRegistered={(usage) => {
+              if (usage) setAllowance(usage);
+              setLimitReached(false);
+              setJustRegistered(true);
+            }} />
+          </div>
+        )}
 
         {started ? (
           <button type="button" className="ask-new" onClick={newConversation} disabled={loading}>{t.newChat}</button>

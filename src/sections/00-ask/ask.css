@@ -142,3 +142,6 @@
 .ask-infra li.needed { color: var(--rewards); }
 .ask-cols { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 860px) { .ask-cols { grid-template-columns: 1fr; } }
+
+/* Mini registration under the chat */
+.ask-register { margin-top: 16px; }

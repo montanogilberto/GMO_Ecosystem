@@ -1,3 +1,16 @@
+# Builds the GMO Ecosystem web app and deploys it to Azure Static Web Apps.
+#
+# - Push to main            → production deploy
+# - Pull request into main  → preview environment (removed when the PR closes)
+# - Actions tab → Run       → manual production deploy
+#
+# Repository settings (Settings → Secrets and variables → Actions):
+#   Secret   AZURE_STATIC_WEB_APPS_API_TOKEN  deployment token from the Static Web App
+#                                             (Azure portal → your Static Web App → Manage deployment token)
+#   Variable VITE_INTAKE_API_URL              address of the Factory's Business Intake API,
+#                                             baked into the build (e.g. https://intake.example.com)
+#   Variable VITE_GMO_LOGIN_URL               optional: login of the GMO operations platform
+#                                             (defaults to the POSGMO site, see src/lib/site.ts)
 name: Deploy to Azure Static Web Apps
 
 on:
@@ -8,31 +21,53 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pull-requests: write # lets the deploy action comment the preview URL on PRs
+
+concurrency:
+  group: deploy-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build_and_deploy:
+    name: Build and deploy
     if: github.event_name != 'pull_request' || github.event.action != 'closed'
     runs-on: ubuntu-latest
-    name: Build and Deploy
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # i18n check + TypeScript + Vite build (see package.json "build")
+      - name: Build
+        run: npm run build
+        env:
+          VITE_INTAKE_API_URL: ${{ vars.VITE_INTAKE_API_URL }}
+          VITE_GMO_LOGIN_URL: ${{ vars.VITE_GMO_LOGIN_URL }}
+
       - name: Deploy
         uses: Azure/static-web-apps-deploy@v1
-        env:
-          # Address of the Factory's Business Intake API, baked into the build.
-          # Set it under Settings → Secrets and variables → Actions → Variables.
-          VITE_INTAKE_API_URL: ${{ vars.VITE_INTAKE_API_URL }}
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: upload
-          app_location: "/"
-          output_location: "dist"
-          app_build_command: "npm run build"
+          # Already built above: upload dist/ as-is (it includes staticwebapp.config.json from public/).
+          app_location: dist
+          output_location: ""
+          skip_app_build: true
+          skip_api_build: true
 
   close_pull_request:
+    name: Close PR preview
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
-    name: Close Pull Request preview
     steps:
       - uses: Azure/static-web-apps-deploy@v1
         with:

@@ -1,6 +1,7 @@
 import { IonHeader, IonMenuButton, IonToolbar } from "@ionic/react";
 import { useLang, useText } from "../lib/i18n";
 import { SectionLink, useScroll } from "../lib/scroll";
+import { LOGIN_URL } from "../lib/site";
 import en from "./en.json";
 import es from "./es.json";
 import LangSwitch from "./LangSwitch";
@@ -22,6 +23,7 @@ export default function Header() {
               </SectionLink>
             ))}
           </nav>
+          <a href={LOGIN_URL} className="btn small primary nav-login">{t.nav.login}</a>
           <LangSwitch lang={lang} label={t.nav.language} />
           <IonMenuButton menu="nav" className="nav-toggle" aria-label={t.nav.menu} />
         </div>

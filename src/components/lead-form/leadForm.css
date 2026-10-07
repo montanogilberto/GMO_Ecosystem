@@ -1,0 +1,20 @@
+/* Lead capture form (mini registration + contact). */
+.lead-form { max-width: 920px; padding: 20px 22px; border-radius: var(--radius); border: 1px solid var(--pos); background: linear-gradient(160deg, rgba(34,199,184,.10), var(--panel)); }
+.lead-form h3 { margin-bottom: .3em; }
+.lead-form > p.muted { margin-bottom: 14px; }
+.lead-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.lead-form label { display: flex; flex-direction: column; gap: 4px; font-size: .82rem; color: var(--muted); }
+.lead-form input:not([type="checkbox"]), .lead-form textarea { padding: 10px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--text); font: inherit; font-size: .95rem; outline: none; }
+.lead-form input:focus, .lead-form textarea:focus { border-color: var(--pos); }
+.lead-message { margin-top: 12px; }
+.lead-form textarea { resize: vertical; }
+.lead-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.lead-form .lead-consent { flex-direction: row; align-items: flex-start; gap: 10px; margin: 14px 0; font-size: .86rem; color: var(--text); }
+.lead-consent input { margin-top: 3px; accent-color: var(--pos); width: 18px; height: 18px; flex: 0 0 auto; }
+.lead-error { color: var(--arcade); font-size: .88rem; margin: 0 0 10px; }
+.lead-note { margin: 10px 0 0; font-size: .78rem; color: var(--muted); }
+.lead-done { border-color: var(--loans); color: var(--text); }
+@media (max-width: 600px) {
+  .lead-grid { grid-template-columns: 1fr; }
+  .lead-form .btn { width: 100%; }
+}

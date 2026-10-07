@@ -1,0 +1,10 @@
+/* AI token bar under the Ask chat. */
+.token-bar { max-width: 920px; margin-top: 12px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--panel); font-size: .82rem; color: var(--muted); }
+.token-bar-head { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 6px; }
+.token-bar-head b { color: var(--text); font-family: var(--mono); font-weight: 600; }
+.token-bar-track { height: 8px; border-radius: 999px; background: var(--panel-2); overflow: hidden; }
+.token-bar-fill { height: 100%; border-radius: inherit; transition: width .6s ease; }
+.token-bar-fill.low { background: linear-gradient(90deg, var(--pos), var(--loans)); }
+.token-bar-fill.mid { background: linear-gradient(90deg, var(--loans), var(--rewards)); }
+.token-bar-fill.high { background: linear-gradient(90deg, var(--rewards), var(--arcade)); }
+.token-bar small { display: block; margin-top: 6px; }

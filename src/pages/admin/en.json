@@ -1,0 +1,34 @@
+{
+  "title": "GMO — Leads & follow-up",
+  "keyLabel": "Admin key",
+  "enter": "Enter",
+  "signOut": "Sign out",
+  "cards": {
+    "visits": "Visits",
+    "today": "today",
+    "unique": "unique visitors",
+    "tokens": "AI tokens used",
+    "analyses": "analyses",
+    "leads": "Leads",
+    "conversion": "Visitor → lead",
+    "conversionNote": "leads per unique visitor"
+  },
+  "chart": "Visits, last 30 days",
+  "leads": "Leads to follow up",
+  "all": "All",
+  "refresh": "Refresh",
+  "empty": "No leads yet.",
+  "statuses": { "new": "New", "contacted": "Contacted", "qualified": "Qualified", "won": "Won", "lost": "Lost" },
+  "sources": { "ask_factory": "Ask the Factory", "contact_form": "Contact form" },
+  "call": "Call",
+  "tokens": "tokens",
+  "notesPlaceholder": "Follow-up notes…",
+  "save": "Save",
+  "saving": "Saving…",
+  "errors": {
+    "wrongKey": "Wrong admin key.",
+    "disabled": "Admin is turned off: set SITE_ADMIN_KEY on the server.",
+    "network": "The GMO platform isn't reachable.",
+    "save": "Couldn't save the change."
+  }
+}

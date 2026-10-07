@@ -10,10 +10,15 @@
     "architecture": "Arquitectura",
     "roadmap": "Hoja de ruta",
     "language": "Idioma",
-    "menu": "Abrir menú"
+    "menu": "Abrir menú",
+    "contact": "Contacto",
+    "login": "Iniciar sesión"
   },
   "footer": {
     "notifications": "Notificaciones",
-    "agents": "Agentes de IA"
+    "agents": "Agentes de IA",
+    "visits": "visitas",
+    "today": "hoy",
+    "visitorsTitle": "Visitas a esta página"
   }
 }

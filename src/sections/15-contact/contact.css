@@ -1,0 +1,8 @@
+/* Contact module. */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: start; }
+.contact-grid > * { min-width: 0; }
+@media (max-width: 860px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+.contact-login { margin-top: 20px; color: var(--muted); }
+.contact-login a { color: var(--pos); font-weight: 600; }

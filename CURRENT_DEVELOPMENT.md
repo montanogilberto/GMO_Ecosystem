@@ -103,6 +103,36 @@ Each section folder holds `Component.tsx`, `component.css`, `en.json` and `es.js
 
 It is **analysis only**: it never writes a PRD, starts construction or touches a database.
 
+### Ecosystem onboarding (specification of 2026-10-07)
+
+The agent is now the **Business Intake & Ecosystem Onboarding Agent**. **The business joins GMO; GMO does not build an application for the business.** It answers "can this company operate in GMO today?" with:
+
+- **Decisions per capability, in order of preference:**
+  - REUSE;
+  - **CONFIGURE** (company setup, no development, e.g. activating modules in `company_modules`, product categories, roles);
+  - EXTEND (GMO development for every company);
+  - CREATE (a new GMO capability, never a company-specific app);
+  - plus INVESTIGATE and NOT APPLICABLE.
+- **Readiness per layer** for each existing capability: mobile app / web / backend / database = AVAILABLE · PARTIAL · MISSING · UNKNOWN. This is computed from evidence and never assumed.
+- **An onboarding plan:** register the company, activate modules, configure, invite users, start in the GMO mobile app and web platform.
+- **Infrastructure:** new website / app / backend / database / deployment / hosting are all "no" by default.
+- **Onboarding readiness:**
+  - READY;
+  - READY WITH CONFIGURATION;
+  - READY AFTER EXTENSION;
+  - NEEDS BUSINESS CLARIFICATION;
+  - NEEDS REPOSITORY INVESTIGATION;
+  - NEEDS BOTH.
+- **Development requests** (for the PRD Builder) **only** with READY AFTER EXTENSION. This is enforced in code; onboarding and configuration never produce a PRD.
+
+**What exists for onboarding today (verified):**
+- the tables `companies`, `company_modules (companyId, moduleId, active)`, `modules`, `permissions`, `roles`, `role_permissions` and `userCompanies`;
+- the routes `/companies`, `/companiesBranches`, `/users` and `/login`.
+
+**Not verified:** any API for activating modules or assigning roles, and a self-service onboarding screen. The registry entry `companyOnboarding` in GMO_MODULES.md records this.
+
+**Mobile/web availability** is UNKNOWN for most modules, because their screens aren't documented. Adding `mobile:` / `web:` lines to GMO_MODULES.md (e.g. `mobile: available — Clientes screen`) turns them into real readiness.
+
 ### How it decides (Business Intake specification, 2026-10-06)
 
 The agent follows the product owner's specification:
@@ -233,13 +263,44 @@ The input was "Soy abogada, voy a abrir mi despacho. Necesito registrar a mis cl
 
 ---
 
+## 3b. Commercial core: visits, AI tokens, leads, follow-up
+
+These features are the website's money-making funnel: **visit → free AI analysis → mini registration (lead) → follow-up → company onboarded into GMO**.
+
+| Feature | Where | How it works |
+|---|---|---|
+| **Visit counter** | Footer ("👁 N visitas · M hoy") | One visit per browser per 30 min. The browser has an anonymous id; IP addresses are only stored as a salted hash. |
+| **AI token bar** | Under the Ask chat | Every analysis reports its real tokens (input + output + thinking, ~9,000 each). Free allowance 40,000 per visitor (~4 analyses); registering raises it to 400,000. Repeated questions (cache) are free. When it runs out, the chat asks the visitor to register (HTTP 402). |
+| **Mini registration** | Appears after the first analysis (or when tokens run out) | Name, WhatsApp/phone, email, business, and consent. Saved as a **lead** (`ask_factory`) together with the analysis (business type, readiness, summary). |
+| **Contact module** | New section "Contacto" (+ menu link) | Name, contact, business, message, consent. Saved as a lead (`contact_form`). |
+| **Follow-up** | `/admin` or `/es/admin` (GMO team only) | Shows visits, tokens, leads and visitor → lead conversion, plus a 30-day visit chart. Each lead has WhatsApp / call / email links and its analysis, and can be set to new → contacted → qualified → won / lost, with notes. CSV export. |
+| **Log in** | Header, ☰ menu, Contact | Goes to the existing GMO web platform: `https://mango-smoke-0323ed91e.3.azurestaticapps.net/login` (`VITE_GMO_LOGIN_URL`). |
+
+**Storage and protections:**
+- **Code:** `posgmo-factory/site_commercial/` (`store.py` for SQLite, `routes.py` for `/site/*`), mounted in `business_intake_api.py`.
+- **Lead fields:** these follow the Factory's `leadCapture` design (`tests/prd_leadCapture.json`), so the data can move into the GMO backend when that module is built.
+- **Protections:** a honeypot against bots; 10 leads per IP per hour; email/phone validation; consent required; the admin key is compared in constant time; without `SITE_ADMIN_KEY` the admin is off.
+- **Settings:**
+  - `SITE_ADMIN_KEY` (the follow-up password);
+  - `SITE_DATA_DIR` (on Azure: `/home/data`, so the database survives restarts);
+  - `SITE_FREE_TOKENS` and `SITE_REGISTERED_TOKENS`;
+  - `SITE_IP_SALT`.
+- **Tests:** `tests/test_site_commercial.py` (19 tests).
+
+**Before going live:**
+- Publish a **privacy notice** (aviso de privacidad, required in Mexico by the LFPDPPP) and link it from the consent checkbox.
+- Set a strong `SITE_ADMIN_KEY`.
+- Point `SITE_DATA_DIR` at persistent storage.
+
 ## 4. How to run
 
 **Agent API** (in `Agent_POSGMO/posgmo-factory`, needs `GEMINI_API_KEY` in `.env`):
 
 ```bash
-.venv/bin/uvicorn business_intake_api:app --port 8090
+SITE_ADMIN_KEY=choose-a-password .venv/bin/uvicorn business_intake_api:app --port 8090
 ```
+
+The follow-up page is http://localhost:8080/es/admin; it asks for that key.
 
 **App** (in `GMO_Ecosystem`, Node 20+):
 
@@ -290,7 +351,10 @@ Then add `NSMicrophoneUsageDescription` and `NSSpeechRecognitionUsageDescription
 | Item | Status |
 |---|---|
 | App builds (i18n check + TypeScript + Vite) | ✅ |
-| Business Intake tests (48, incl. 2 live) | ✅ |
+| Business Intake tests (56, incl. 2 live) + commercial core tests (19) | ✅ |
+| Visit counter, token bar, mini registration, contact, follow-up admin, Log in: tested in the app (Spanish), 375–1440px | ✅ |
+| Privacy notice for the consent checkbox | ⏳ needed before going live |
+| Leads storage | Interim SQLite in the API service; move to the GMO backend `leadCapture` module when it exists |
 | Browser tests: navigation, side menu, language switch, timeline, Rewards demo, layouts 320–1440px | ✅ |
 | Ask chat end-to-end in the app (text + website, Spanish) | ✅ tested 2026-10-06 (dictation itself needs a real microphone) |
 | `GMO_MODULES.md` wiring for Alerts, QR, Clients map, Dashboard, Accounting and 3 POS agents | ⏳ "not documented yet": fill in when known |

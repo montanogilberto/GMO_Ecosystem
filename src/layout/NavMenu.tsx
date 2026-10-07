@@ -1,6 +1,7 @@
 import { IonContent, IonHeader, IonItem, IonLabel, IonList, IonMenu, IonMenuToggle, IonToolbar } from "@ionic/react";
 import { useUrlLang } from "../lib/i18n";
 import { useScroll } from "../lib/scroll";
+import { LOGIN_URL } from "../lib/site";
 import en from "./en.json";
 import es from "./es.json";
 import LangSwitch from "./LangSwitch";
@@ -22,6 +23,7 @@ export default function NavMenu() {
         </IonToolbar>
       </IonHeader>
       <IonContent>
+        <a href={LOGIN_URL} className="btn primary nav-menu-login">{t.nav.login}</a>
         <IonList lines="none">
           {NAV_LINKS.map((l) => (
             <IonMenuToggle key={l.id} menu="nav" autoHide={false}>

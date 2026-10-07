@@ -15,6 +15,7 @@ import "./layout/footer.css";
 import NavMenu from "./layout/NavMenu";
 import { ScrollProvider } from "./lib/scroll";
 import Home from "./pages/Home";
+import Admin from "./pages/admin/Admin";
 
 // Same look on the web, iOS and Android.
 setupIonicReact({ mode: "md" });
@@ -29,6 +30,8 @@ export default function App() {
               keeps a single page instance, so switching language only swaps the text and
               keeps your place. (IonRouterOutlet would stack a second copy of the page.) */}
           <Switch>
+            {/* GMO team only: leads and follow-up (protected by the server's admin key). */}
+            <Route exact path="/:lang(es)?/admin" component={Admin} />
             <Route exact path="/:lang(es)?" component={Home} />
             <Redirect to="/" />
           </Switch>

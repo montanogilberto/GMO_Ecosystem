@@ -35,7 +35,9 @@
       "network": "El agente de la Factory no está disponible en este momento. Intenta más tarde.",
       "timeout": "El análisis tardó demasiado. Intenta de nuevo.",
       "rateLimited": "Demasiados análisis desde tu conexión. Intenta más tarde.",
-      "generic": "Algo salió mal al analizar tu solicitud. Intenta de nuevo."
+      "generic": "Algo salió mal al analizar tu solicitud. Intenta de nuevo.",
+      "tokenLimit": "Usaste tus tokens de IA gratis. Regístrate abajo (es gratis) para continuar.",
+      "tokenLimitRegistered": "Usaste tus tokens de IA. El equipo de GMO te contactará para continuar."
     },
     "labels": {
       "understood": "Lo que entendimos",

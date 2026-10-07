@@ -154,7 +154,7 @@ export default function Ask() {
       if (data.allowance) setAllowance(data.allowance);
       answer({ role: "factory", data });
     } catch (err) {
-      fail((err as Error).name === "AbortError" ? d.errors.timeout : d.errors.network);
+      fail((err as Error).name === "AbortError" ? d.errors.timeout : `${d.errors.network} (${API_URL})`);
     } finally {
       clearTimeout(timeout);
       setLoading(false);

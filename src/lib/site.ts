@@ -2,7 +2,14 @@
 // the Business Intake agent plus the commercial core — visit counter, AI token
 // allowance, leads. The address comes from VITE_INTAKE_API_URL (see .env.example).
 
-export const API_URL = (import.meta.env.VITE_INTAKE_API_URL || "http://localhost:8090").replace(/\/$/, "");
+/** Without VITE_INTAKE_API_URL (local development), the API is looked for on the same machine the page
+ *  was opened from, port 8090 — 127.0.0.1 instead of "localhost" so IPv6/IPv4 differences can't break it. */
+function defaultApiUrl(): string {
+  const host = typeof window === "undefined" || ["localhost", ""].includes(window.location.hostname) ? "127.0.0.1" : window.location.hostname;
+  return `http://${host}:8090`;
+}
+
+export const API_URL = (import.meta.env.VITE_INTAKE_API_URL || defaultApiUrl()).replace(/\/$/, "");
 
 /** Login of the existing GMO web operations platform, where companies operate day to day. */
 export const LOGIN_URL = import.meta.env.VITE_GMO_LOGIN_URL || "https://mango-smoke-0323ed91e.3.azurestaticapps.net/login";

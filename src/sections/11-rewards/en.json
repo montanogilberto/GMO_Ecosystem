@@ -1,0 +1,57 @@
+{
+  "eyebrow": "Rewards · Cross-App Loyalty",
+  "title1": "One customer relationship.",
+  "title2": "Loyalty across GMO.",
+  "intro": "Rewards is not a fourth application. <b>Rewards is a cross-cutting loyalty capability of the GMO ecosystem.</b> It connects customer activity across POS GMO, Arcade / Casino and other GMO applications.",
+  "feeds": {
+    "otherApps": "Other GMO apps",
+    "rewards": "Loyalty · Points · Benefits",
+    "notifications": "Notifications",
+    "engagement": "Customer engagement"
+  },
+  "verbs": [
+    { "title": "Earn", "text": "Points from qualifying activity such as POS transactions." },
+    { "title": "Track", "text": "Points, activity and rewards history." },
+    { "title": "Engage", "text": "POS, Arcade / Casino and other apps create additional engagement." },
+    { "title": "Reward", "text": "Benefits encourage repeat activity." },
+    { "title": "Connect", "text": "The customer relationship spans GMO applications." }
+  ],
+  "sim": {
+    "title": "Try it: a POS purchase",
+    "amount": "Purchase amount",
+    "button": "Complete purchase",
+    "steps": ["🧾 POS Transaction", "💵 Income recorded → Accounting", "⚙️ earnFromTicket", "🎁 Rewards Service · EARN", "📒 Customer Rewards Ledger", "🔔 Notification decision → Push / WhatsApp / SMS"],
+    "note": "Rewards uses the transaction/income as the <b>source event</b>. It never modifies the POS accounting ledger directly."
+  },
+  "phone": {
+    "title": "My Rewards",
+    "available": "Available points",
+    "date": "Date",
+    "activity": "Activity",
+    "points": "Points",
+    "benefits": ["🎁 $50 benefit", "🎮 Arcade benefit", "⭐ Member promotion"]
+  },
+  "separate": {
+    "title": "Three concepts that must remain separate",
+    "money": "POS Money",
+    "moneyNote": "Accounting ledger",
+    "points": "Rewards Points",
+    "pointsNote": "Loyalty ledger",
+    "credits": "Arcade / Casino Credits",
+    "creditsNote": "Gaming rules"
+  },
+  "integrations": [
+    { "title": "Rewards + POS", "text": "A purchase can fan out to Accounting, Receipt, Notifications and Rewards. The customer simply sees: <i>“+50 Rewards Points.”</i>" },
+    { "title": "Rewards + Arcade / Casino", "text": "Customers play with separate gaming credits. Gaming engagement can contribute to loyalty while maintaining a clear separation between gaming credits and Rewards points." },
+    { "title": "Rewards + Notifications", "text": "A reward event creates a reason to contact the customer. <b>POS</b> creates the relationship. <b>Rewards</b> creates engagement. <b>Notifications</b> creates the next contact." },
+    { "title": "Rewards + SmartLoans", "text": "They remain separate. <b>Rewards is never a credit score</b> and never replaces lending or KYC decisions." }
+  ],
+  "factory": "<b>The Factory perspective:</b> Factory does not simply build a <code>RewardsPage</code>. It understands the complete business chain: POS → Income → <code>earnFromTicket</code> → Rewards → Notifications → Customer Engagement. A single business requirement can span multiple applications, repositories, APIs, database objects, agents and communication channels.",
+  "data": {
+    "toast": "✅ Purchase completed · <b>+{points} Rewards Points</b>",
+    "month": "+{points} this month",
+    "purchase": "POS Purchase",
+    "reward": "Reward",
+    "today": "Today"
+  }
+}

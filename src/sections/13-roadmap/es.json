@@ -1,0 +1,9 @@
+{
+  "eyebrow": "Hoja de ruta",
+  "title": "De fábrica de software a inteligencia de aplicaciones autónoma",
+  "infrastructure": { "title": "Infraestructura determinista", "text": "APIs, bases de datos, herramientas, autenticación, registro y validación." },
+  "reasoning": { "title": "Razonamiento agéntico", "text": "Los agentes entienden el contexto y razonan sobre posibles soluciones." },
+  "coordination": { "title": "Coordinación de agentes", "text": "Varios agentes especializados colaboran a lo largo del ciclo de ingeniería." },
+  "proactive": { "title": "Inteligencia proactiva", "text": "Los agentes detectan situaciones antes de que el usuario pregunte." },
+  "selfImprovement": { "title": "Automejora", "text": "Incidentes, evaluaciones y retroalimentación de producción se vuelven señales de aprendizaje." }
+}

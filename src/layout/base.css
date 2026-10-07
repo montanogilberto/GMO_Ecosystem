@@ -1,0 +1,76 @@
+/* Colors, fonts and page-wide basics shared by every section. */
+:root {
+  --bg: #070b16;
+  --bg-alt: #0b1122;
+  --panel: #111a30;
+  --panel-2: #16213d;
+  --line: #24314f;
+  --text: #e8edf8;
+  --muted: #94a2bf;
+  --factory: #8b7cff;
+  --platform: #5aa9ff;
+  --pos: #22c7b8;
+  --loans: #34d27b;
+  --arcade: #ff4fa3;
+  --rewards: #ffb534;
+  --notif: #38bdf8;
+  --ai: #a78bfa;
+  --radius: 14px;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 Inter, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+code, .mono { font-family: var(--mono); font-size: .86em; }
+code { background: var(--panel-2); padding: 1px 6px; border-radius: 6px; color: #c9d4ff; }
+h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 .6em; }
+h2 { font-size: clamp(1.7rem, 3.6vw, 2.6rem); letter-spacing: -.02em; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: .95rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+p { margin: 0 0 1em; }
+
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 96px 0; }
+.section.alt { background: var(--bg-alt); border-block: 1px solid var(--line); }
+.eyebrow { color: var(--factory); font-weight: 700; text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; margin-bottom: .8em; }
+.sub { color: var(--muted); font-size: 1.08rem; max-width: 760px; margin-bottom: 2.2em; }
+.sub b { color: var(--text); }
+.lead { font-size: clamp(1.05rem, 2vw, 1.2rem); color: var(--muted); max-width: 760px; }
+.lead b { color: var(--text); }
+.muted { color: var(--muted); }
+.small { font-size: .88rem; }
+.mt { margin-top: 2.6em; }
+
+/* Fade-in as a section scrolls into view (pages/Home.tsx sets data-reveal on each <section>) */
+section[data-reveal] :is(h2, .card, .app, .eco, .tenant, .timeline, .branch, .plan-card, .feeds, .gov, .layer, .road > div, .verbs > div, .cur, .principles > div) {
+  transition: opacity .6s ease, transform .6s ease;
+}
+section[data-reveal="pending"] :is(h2, .card, .app, .eco, .tenant, .timeline, .branch, .plan-card, .feeds, .gov, .layer, .road > div, .verbs > div, .cur, .principles > div) {
+  opacity: 0; transform: translateY(18px);
+}
+@keyframes pop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  section[data-reveal] :is(h2, .card, .app, .eco, .tenant, .timeline, .branch, .plan-card, .feeds, .gov, .layer, .road > div, .verbs > div, .cur, .principles > div) { opacity: 1; transform: none; transition: none; }
+  * { animation: none !important; }
+}
+@media (min-width: 1600px) {
+  .wrap { max-width: 1280px; }
+}
+@media (max-width: 860px) {
+  .section { padding: 72px 0; }
+}
+@media (max-width: 600px) {
+  .wrap { padding: 0 16px; }
+}
+
+/* Ionic page background */
+ion-content.page { --background: var(--bg); --color: var(--text); font: 16px/1.6 Inter, system-ui, -apple-system, sans-serif; }

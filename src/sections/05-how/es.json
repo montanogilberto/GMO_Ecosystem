@@ -1,0 +1,137 @@
+{
+  "eyebrow": "Cómo funciona Factory",
+  "title": "De la necesidad del negocio al software evolucionado",
+  "intro": "Un Pull Request es solo un mecanismo de entrega controlada. El verdadero proceso de Factory es el razonamiento y la coordinación que ocurren antes de cambiar el código. Haz clic en cada paso o presiona reproducir.",
+  "pipeline": {
+    "title": "El pipeline de Factory",
+    "intro": "No es un solo agente de código. Es una organización coordinada de agentes de ingeniería especializados.",
+    "before": ["Arquitecto anfitrión", "Analizador de PRD", "Enriquecedor de PRD", "Analista de esquema", "Arquitecto"],
+    "gate": "Puerta de decisión",
+    "after": ["Base de datos", "Backend", "Consistencia de diseño", "Corrector", "Frontend"],
+    "loop": "Ciclo de revisión / corrección"
+  },
+  "loop": {
+    "steps": ["Necesidad de negocio", "Razonamiento agéntico", "Plan de ingeniería", "Implementación", "Validación"],
+    "learning": "Aprendizaje en producción",
+    "next": "Siguiente evolución"
+  },
+  "data": {
+    "play": "▶ Reproducir",
+    "pause": "❚❚ Pausa",
+    "steps": [
+      {
+        "title": "Necesidad de negocio",
+        "text": "Una empresa o product owner describe lo que necesita el negocio, en lenguaje natural.",
+        "diagram": [
+          "  “Agrega gestión de inventario a GMO.”",
+          "",
+          "   └─► Factory recibe la necesidad del negocio",
+          "       (todavía no se escribe código)"
+        ]
+      },
+      {
+        "title": "Entender",
+        "text": "Factory investiga el negocio y el ecosistema existente en todas sus capas antes de proponer algo.",
+        "diagram": [
+          "  Frontend ─► API ─► Backend",
+          "           ─► Procedimiento almacenado ─► Base de datos",
+          "",
+          "  y además:",
+          "",
+          "  Agentes ─► Herramientas ─► RAG ─► Flujos",
+          "",
+          "  + Modelo multiempresa (companyId desde la sesión)"
+        ]
+      },
+      {
+        "title": "Grafo del ecosistema",
+        "text": "Factory construye las relaciones entre componentes para razonar sobre el impacto de un cambio.",
+        "diagram": [
+          "  Página de inventario            [falta]",
+          "        │",
+          "  inventoryApi.ts                 [falta]",
+          "        │",
+          "  GET /inventory                  [falta]",
+          "        │",
+          "  routes_/inventory.py            [falta]",
+          "        │",
+          "  sp_inventory_adjust             [existe]",
+          "        │",
+          "  inventoryStock                  [existe]",
+          "  inventoryMovements              [existe]"
+        ]
+      },
+      {
+        "title": "Razonamiento multiagente",
+        "text": "Agentes especializados analizan la necesidad desde su propio dominio, y una puerta de decisión consolida su razonamiento.",
+        "diagram": [
+          "       Necesidad de negocio",
+          "                 │",
+          "          ┌────────────┐",
+          "          │ Arquitecto │",
+          "          └─────┬──────┘",
+          "     ┌──────────┼───────────┐",
+          "  Agente      Agente      Agente",
+          "  Base datos  Backend     Frontend",
+          "     └──────────┼───────────┘",
+          "        Puerta de decisión",
+          "                │",
+          "        Plan de ingeniería"
+        ]
+      },
+      {
+        "title": "Plan de ingeniería",
+        "text": "En lugar de cambiar código de inmediato, Factory genera un plan de trabajo de ingeniería agéntico que puede revisarse y aprobarse.",
+        "diagram": [
+          "  PLAN DE TRABAJO DE INGENIERÍA AGÉNTICO",
+          "  ├─ contexto del negocio",
+          "  ├─ repositorios",
+          "  ├─ archivos",
+          "  ├─ cambios de base de datos",
+          "  ├─ cambios de API",
+          "  ├─ cambios de frontend",
+          "  ├─ cambios de agentes",
+          "  ├─ dependencias",
+          "  ├─ validación",
+          "  ├─ riesgos",
+          "  └─ criterios de aceptación"
+        ]
+      },
+      {
+        "title": "Ejecución controlada",
+        "text": "Herramientas gobernadas ejecutan el plan aprobado en los repositorios, en orden de dependencias.",
+        "diagram": [
+          "  PLAN",
+          "   ├── Base de datos",
+          "   ├── Backend",
+          "   ├── Frontend",
+          "   └── Agentes de IA"
+        ]
+      },
+      {
+        "title": "Validar y revisar",
+        "text": "Los cambios se validan, revisan, corrigen y vuelven a probar hasta cumplir los criterios de aceptación.",
+        "diagram": [
+          "  Validación ──► Revisión",
+          "      ▲              │",
+          "      │              ▼",
+          "  Nueva prueba ◄── Corrección"
+        ]
+      },
+      {
+        "title": "Entregar y evolucionar",
+        "text": "El cambio se entrega como un Pull Request controlado que una persona fusiona. Después, el aprendizaje en producción alimenta la siguiente evolución.",
+        "diagram": [
+          "  ✓ Migración de base de datos",
+          "  ✓ Rutas y servicios del backend",
+          "  ✓ Páginas y cliente API del frontend",
+          "  ✓ Actualización de agentes",
+          "  ✓ Validación aprobada",
+          "",
+          "  ──► Pull Request listo para revisión",
+          "  ──► Aprendizaje en producción ↺ siguiente evolución"
+        ]
+      }
+    ]
+  }
+}

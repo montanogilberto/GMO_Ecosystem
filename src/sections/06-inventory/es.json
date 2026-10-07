@@ -1,0 +1,18 @@
+{
+  "eyebrow": "Grafo del ecosistema · Ejemplo",
+  "title": "Una idea de negocio. Un corte vertical completo.",
+  "intro": "Solicitud: <b>“Agrega gestión de inventario a GMO.”</b> Factory primero entiende el ecosistema existente y luego razona sobre lo que falta y lo que debe cambiar.",
+  "tree": {
+    "requirement": "Requerimiento de negocio",
+    "analysis": "Análisis agéntico de Factory",
+    "existing": "Ecosistema existente",
+    "required": "Evolución requerida",
+    "inventoryPage": "Página de inventario",
+    "ai": "IA"
+  },
+  "plan": {
+    "title": "Plan de trabajo de ingeniería agéntico",
+    "items": ["contexto del negocio", "repositorios", "archivos", "cambios de base de datos", "cambios de API", "cambios de frontend", "cambios de agentes", "dependencias", "alcance por empresa", "validación", "riesgos", "criterios de aceptación"],
+    "note": "El plan de trabajo es el puente controlado entre el razonamiento de la IA y la implementación del software."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "eyebrow": "The Vision",
+  "title": "Software that adapts to the business.",
+  "lead": "We are building an ecosystem where companies do not have to reshape their operation around rigid software. Instead, an autonomous agentic Factory understands the business, reasons about its needs and continuously evolves the software that supports it.",
+  "pillars": {
+    "business": "Business Systems",
+    "agents": "AI Agents",
+    "factory": "Engineering Factory"
+  },
+  "equation": {
+    "need": "Business Need",
+    "reasoning": "Agentic Reasoning",
+    "engineering": "Governed Engineering",
+    "result": "Evolving Software"
+  },
+  "motto": "Understand. Reason. Build. Validate. Evolve.",
+  "tagline": "One Factory. One Ecosystem. N Companies.",
+  "backToTop": "Back to top"
+}

@@ -1,0 +1,20 @@
+{
+  "eyebrow": "Gobernanza y seguridad",
+  "title": "Autonomía con control de ingeniería",
+  "intro": "Autónomo no significa sin restricciones. Los agentes razonan de forma independiente, mientras la ejecución sigue gobernada por reglas técnicas y de negocio explícitas.",
+  "rules": [
+    { "title": "Sin acceso irrestricto a la BD", "text": "Los agentes solo usan herramientas gobernadas del backend/API." },
+    { "title": "Sin esquemas inventados", "text": "Factory trabaja con la verdad del repositorio y la base de datos." },
+    { "title": "Aislamiento por empresa", "text": "<code>companyId</code> proviene del contexto autenticado, nunca de un LLM." },
+    { "title": "Aprobación humana", "text": "Las operaciones sensibles requieren aprobación explícita." },
+    { "title": "Auditabilidad", "text": "Las decisiones importantes y las acciones de herramientas se registran." },
+    { "title": "El dinero requiere aprobación", "text": "Los movimientos financieros siempre requieren aprobación." }
+  ],
+  "ladderTitle": "Escalera de autonomía",
+  "ladder": [
+    { "step": "LEER", "note": "Inspeccionar y entender" },
+    { "step": "PROPONER", "note": "Planear y recomendar" },
+    { "step": "EJECUTAR CON APROBACIÓN", "note": "Humano en el ciclo" },
+    { "step": "AUTO", "note": "Acciones probadas de bajo riesgo" }
+  ]
+}

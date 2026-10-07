@@ -1,0 +1,68 @@
+{
+  "eyebrow": "Fundamentos",
+  "title": "Lo que construimos",
+  "intro": "La base para una fábrica de software agéntica ya existe en las aplicaciones, la infraestructura de IA y la automatización de ingeniería.",
+  "agents": {
+    "title": "Infraestructura de IA agéntica",
+    "items": [
+      "Framework de agentes independiente del modelo",
+      "Razonamiento multimodelo: el LLM adecuado para cada tarea",
+      "Agentes especializados por dominio",
+      "Orquestación de agentes",
+      "Ejecución basada en herramientas",
+      "Flujos de aprobación humana",
+      "RAG y recuperación de evidencia",
+      "Recuperación híbrida: embeddings + RRF",
+      "Arquitectura MCP / orientada a grafos",
+      "Marco de evaluación"
+    ]
+  },
+  "understanding": {
+    "title": "Comprensión del software",
+    "intro": "Factory construye una comprensión del ecosistema en lugar de tratar los repositorios como archivos aislados.",
+    "relations": [
+      {
+        "from": "Procedimiento almacenado",
+        "to": "Tabla"
+      },
+      {
+        "from": "Ruta del backend",
+        "to": "Procedimiento almacenado"
+      },
+      {
+        "from": "API del frontend",
+        "to": "Ruta del backend"
+      },
+      {
+        "from": "Funcionalidad",
+        "to": "Muchos componentes"
+      },
+      {
+        "from": "Requerimiento de negocio",
+        "to": "Impacto entre sistemas"
+      }
+    ]
+  },
+  "engineering": {
+    "title": "Ingeniería autónoma",
+    "items": [
+      "Pipeline de agentes multietapa con puerta de decisión",
+      "Planes de trabajo de ingeniería antes de implementar",
+      "Cambios coordinados en 4 repositorios",
+      "Ciclo de revisión / corrección / nueva prueba",
+      "Herramientas de ingeniería gobernadas",
+      "Entrega controlada mediante Pull Requests",
+      "Pipeline de Factory en evolución activa"
+    ]
+  },
+  "business": {
+    "title": "Aplicaciones de negocio",
+    "items": [
+      "POS GMO: clientes, seguimiento, KYC, QR, mapas, ventas, gastos, inventario, costos de manufactura, pedidos, tickets, contabilidad, empleados, usuarios, alertas y agentes de IA",
+      "SmartLoans: préstamos entre personas",
+      "Arcade / Casino: juegos y entretenimiento",
+      "Rewards: lealtad entre apps",
+      "Notificaciones: Push, WhatsApp y SMS"
+    ]
+  }
+}

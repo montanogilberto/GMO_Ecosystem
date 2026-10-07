@@ -1,0 +1,30 @@
+/* Multi-company demo: tabs per example company, details card, tenant isolation rule. */
+.tabs-label { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 10px; }
+.tenant-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.tenant-tabs button { background: var(--panel); color: var(--muted); border: 1px solid var(--line); padding: 9px 16px; border-radius: 999px; font: inherit; font-size: .9rem; cursor: pointer; transition: .2s; }
+.tenant-tabs button.active, .tenant-tabs button:hover { color: var(--text); border-color: var(--pos); background: rgba(34,199,184,.12); }
+
+.tenant-body { display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px; }
+.tenant-body > * { min-width: 0; }
+.tenant-card, .tenant-rule { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+.tenant-card { border-top: 3px solid var(--pos); }
+.tenant-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; color: var(--pos); }
+.pill { font-size: .75rem; padding: 3px 10px; border-radius: 999px; background: rgba(52,210,123,.14); color: var(--loans); }
+.mod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.mod-grid span { background: var(--panel-2); padding: 10px 12px; border-radius: 10px; font-size: .88rem; animation: pop .35s ease both; }
+.mod-grid span small { display: block; color: var(--muted); font-size: .74rem; }
+.tenant-rule h4 { margin-top: 4px; }
+.tenant-rule p { color: var(--muted); }
+.tenant-rule p b { color: var(--text); }
+
+@media (max-width: 860px) {
+  .tenant-body { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .tenant-tabs { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; }
+  .tenant-tabs button { flex: 0 0 auto; }
+  .mod-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 360px) {
+  .mod-grid { grid-template-columns: 1fr; }
+}

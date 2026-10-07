@@ -1,0 +1,96 @@
+{
+  "eyebrow": "Las aplicaciones",
+  "title": "Tres aplicaciones principales. Un ecosistema.",
+  "intro": "Rewards y Notificaciones conectan las aplicaciones, mientras que los Agentes de IA aportan inteligencia a todas ellas.",
+  "pos": {
+    "subtitle": "La base de negocio multiempresa de GMO",
+    "capabilitiesTitle": "Capacidades",
+    "capabilities": [
+      "Clientes",
+      "Seguimiento de clientes",
+      "Mapa de clientes",
+      "Códigos QR",
+      "KYC",
+      "Proveedores",
+      "Productos",
+      "Ventas",
+      "Gastos",
+      "Inventario",
+      "Manufactura (costo de cada servicio)",
+      "Pedidos",
+      "Tickets por SMS, WhatsApp y email",
+      "Rewards",
+      "Contabilidad",
+      "Dashboard",
+      "Empleados",
+      "Usuarios y roles",
+      "Alertas",
+      "Emails",
+      "Notificaciones",
+      "Integración con Arcade",
+      "Acceso a SmartLoans",
+      "Marketplace"
+    ],
+    "multiTitle": "Multiempresa",
+    "company": "Empresa",
+    "multiNote": "Una plataforma POS. N empresas. Datos aislados por empresa.",
+    "flowTitle": "Flujo de negocio",
+    "flow": [
+      "Cliente",
+      "POS",
+      "Transacción",
+      "Contabilidad",
+      "Rewards",
+      "Notificaciones"
+    ],
+    "flowLast": "Otras apps de GMO",
+    "agentsTitle": "Agentes de IA en POS",
+    "agents": [
+      "Agentes de soporte que resuelven problemas al instante",
+      "Agente que ayuda a registrar todo tu inventario",
+      "Agente que avisa cuándo comprar más inventario",
+      "Agente que paga tus servicios"
+    ]
+  },
+  "loans": {
+    "subtitle": "Préstamos entre personas: quien necesita dinero le pide prestado directamente a quien quiere prestarlo — SmartLoans no es un banco",
+    "flowTitle": "Flujo",
+    "flow": [
+      "Solicitante",
+      "KYC / Verificación facial y prueba de vida",
+      "Solicitud de préstamo",
+      "Flujo asistido por IA",
+      "Prestamista",
+      "Contrato / Pagaré"
+    ],
+    "flowLast": "Infraestructura de pagos",
+    "architectureTitle": "Arquitectura",
+    "architecture": [
+      "Solicitantes",
+      "Prestamistas",
+      "Personas morales",
+      "KYC",
+      "Rostro / prueba de vida",
+      "Contratos",
+      "Pagaré",
+      "Intenciones de pago",
+      "Transacciones de fondeo",
+      "Comprobantes de transferencia",
+      "SPEI",
+      "STP",
+      "AMEX",
+      "CoDi",
+      "Débito",
+      "CLABE",
+      "Orquestación de IA"
+    ],
+    "callout": "<b>La IA no determina límites de crédito.</b> La IA asiste el flujo. El movimiento de dinero siempre requiere aprobación."
+  },
+  "arcade": {
+    "subtitle": "Plataforma de juegos y entretenimiento",
+    "text": "Arcade / Casino es una aplicación GMO dedicada a juegos y entretenimiento. Opera junto a POS GMO y Rewards, manteniendo sus propios flujos y reglas de negocio.",
+    "creditsTitle": "Créditos de juego separados",
+    "creditsText": "Los créditos de Arcade / Casino son un concepto aparte. No son dinero del POS ni puntos de Rewards.",
+    "callout": "Los juegos se vuelven otro canal de interacción con el cliente, mientras Rewards conecta esa interacción con el resto del ecosistema GMO."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "eyebrow": "Rewards · Lealtad entre apps",
+  "title1": "Una sola relación con el cliente.",
+  "title2": "Lealtad en todo GMO.",
+  "intro": "Rewards no es una cuarta aplicación. <b>Rewards es una capacidad de lealtad transversal del ecosistema GMO.</b> Conecta la actividad del cliente en POS GMO, Arcade / Casino y otras aplicaciones GMO.",
+  "feeds": {
+    "otherApps": "Otras apps GMO",
+    "rewards": "Lealtad · Puntos · Beneficios",
+    "notifications": "Notificaciones",
+    "engagement": "Interacción con el cliente"
+  },
+  "verbs": [
+    { "title": "Acumula", "text": "Puntos por actividad elegible, como compras en el POS." },
+    { "title": "Consulta", "text": "Puntos, actividad e historial de recompensas." },
+    { "title": "Interactúa", "text": "POS, Arcade / Casino y otras apps generan más interacción." },
+    { "title": "Recompensa", "text": "Los beneficios fomentan la recompra." },
+    { "title": "Conecta", "text": "La relación con el cliente abarca las aplicaciones GMO." }
+  ],
+  "sim": {
+    "title": "Pruébalo: una compra en el POS",
+    "amount": "Monto de compra",
+    "button": "Completar compra",
+    "steps": ["🧾 Transacción en POS", "💵 Ingreso registrado → Contabilidad", "⚙️ earnFromTicket", "🎁 Servicio Rewards · ACUMULAR", "📒 Libro de puntos del cliente", "🔔 Decisión de notificación → Push / WhatsApp / SMS"],
+    "note": "Rewards usa la transacción/ingreso como <b>evento de origen</b>. Nunca modifica directamente la contabilidad del POS."
+  },
+  "phone": {
+    "title": "Mis recompensas",
+    "available": "Puntos disponibles",
+    "date": "Fecha",
+    "activity": "Actividad",
+    "points": "Puntos",
+    "benefits": ["🎁 Beneficio de $50", "🎮 Beneficio en Arcade", "⭐ Promoción para miembros"]
+  },
+  "separate": {
+    "title": "Tres conceptos que deben mantenerse separados",
+    "money": "Dinero del POS",
+    "moneyNote": "Contabilidad",
+    "points": "Puntos Rewards",
+    "pointsNote": "Libro de lealtad",
+    "credits": "Créditos Arcade / Casino",
+    "creditsNote": "Reglas de juego"
+  },
+  "integrations": [
+    { "title": "Rewards + POS", "text": "Una compra puede distribuirse a Contabilidad, Recibo, Notificaciones y Rewards. El cliente simplemente ve: <i>“+50 puntos Rewards.”</i>" },
+    { "title": "Rewards + Arcade / Casino", "text": "Los clientes juegan con créditos de juego separados. La interacción en los juegos puede sumar a la lealtad, manteniendo una separación clara entre créditos de juego y puntos Rewards." },
+    { "title": "Rewards + Notificaciones", "text": "Un evento de recompensa crea un motivo para contactar al cliente. <b>POS</b> crea la relación. <b>Rewards</b> crea la interacción. <b>Notificaciones</b> crea el siguiente contacto." },
+    { "title": "Rewards + SmartLoans", "text": "Se mantienen separados. <b>Rewards nunca es un score crediticio</b> ni reemplaza decisiones de préstamo o KYC." }
+  ],
+  "factory": "<b>La perspectiva de Factory:</b> Factory no solo construye una <code>RewardsPage</code>. Entiende la cadena de negocio completa: POS → Ingreso → <code>earnFromTicket</code> → Rewards → Notificaciones → Interacción con el cliente. Un solo requerimiento de negocio puede abarcar múltiples aplicaciones, repositorios, APIs, objetos de base de datos, agentes y canales de comunicación.",
+  "data": {
+    "toast": "✅ Compra completada · <b>+{points} puntos Rewards</b>",
+    "month": "+{points} este mes",
+    "purchase": "Compra POS",
+    "reward": "Recompensa",
+    "today": "Hoy"
+  }
+}

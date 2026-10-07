@@ -1,0 +1,11 @@
+/* Technology: five stack cards. */
+.tech-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.tech-grid div { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; }
+.tech-grid p { margin: .4em 0 0; color: var(--muted); font-size: .88rem; }
+
+@media (max-width: 1000px) {
+  .tech-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .tech-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,18 @@
+{
+  "eyebrow": "Ecosystem Graph · Example",
+  "title": "One business idea. One complete vertical slice.",
+  "intro": "Request: <b>“Add Inventory management to GMO.”</b> Factory first understands the existing ecosystem, then reasons about what is missing and what must change.",
+  "tree": {
+    "requirement": "Business Requirement",
+    "analysis": "Agentic Factory Analysis",
+    "existing": "Existing ecosystem",
+    "required": "Required evolution",
+    "inventoryPage": "Inventory Page",
+    "ai": "AI"
+  },
+  "plan": {
+    "title": "Agentic Engineering Work Plan",
+    "items": ["business context", "repositories", "files", "database changes", "API changes", "frontend changes", "agent changes", "dependencies", "tenant scope", "validation", "risks", "acceptance criteria"],
+    "note": "The Work Plan is the controlled bridge between AI reasoning and software implementation."
+  }
+}

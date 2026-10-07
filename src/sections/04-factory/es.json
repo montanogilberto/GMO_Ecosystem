@@ -1,0 +1,29 @@
+{
+  "eyebrow": "¿Qué es Factory App?",
+  "title": "Una fábrica de software que razona sobre el negocio.",
+  "intro": "Factory es un <b>sistema agéntico de ingeniería de software</b>. Sus agentes no solo generan código a partir de instrucciones. Primero entienden el contexto del negocio, revisan el ecosistema existente, razonan sobre posibles implementaciones y coordinan el trabajo necesario para evolucionar el software.",
+  "quote": "“Los agentes razonan. Las herramientas gobernadas actúan.”",
+  "principles": [
+    { "title": "Entender", "text": "Descubrir el negocio, las aplicaciones, la arquitectura y la implementación existente." },
+    { "title": "Razonar", "text": "Analizar alternativas, dependencias, riesgos y consecuencias." },
+    { "title": "Coordinar", "text": "Agentes especializados colaboran entre dominios y repositorios." },
+    { "title": "Construir", "text": "Herramientas gobernadas implementan el plan de ingeniería aprobado." },
+    { "title": "Validar", "text": "Pruebas, revisiones y verificaciones de consistencia del ecosistema confirman el resultado." },
+    { "title": "Evolucionar", "text": "El software puede adaptarse continuamente a medida que cambian los requerimientos del negocio." }
+  ],
+  "questionsTitle": "Antes de cambiar el software, Factory pregunta:",
+  "questions": [
+    "¿Qué necesita realmente la empresa?",
+    "¿Cómo opera hoy esta empresa?",
+    "¿Qué existe ya en GMO?",
+    "¿Dónde debe vivir esta capacidad?",
+    "¿Qué aplicaciones se ven afectadas?",
+    "¿Qué pantallas del frontend y qué APIs están involucradas?",
+    "¿Qué servicios del backend, procedimientos almacenados y tablas están involucrados?",
+    "¿Qué agentes de IA deben participar?",
+    "¿La solución preserva el modelo multiempresa?",
+    "¿Qué podría romperse?",
+    "¿Cuál es la implementación más segura?",
+    "¿Cómo debe validarse el resultado?"
+  ]
+}

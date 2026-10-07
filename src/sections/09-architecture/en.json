@@ -1,0 +1,27 @@
+{
+  "eyebrow": "Architecture",
+  "title": "Four repositories. One engineering ecosystem.",
+  "frontend": { "text": "User experience and application interfaces." },
+  "backend": {
+    "text": "Business API, authentication, business rules and database gateway.",
+    "routes": "Routes",
+    "services": "Services",
+    "storedProcedures": "Stored Procedures"
+  },
+  "database": {
+    "title": "SQL Database",
+    "tech": "Tables · SPs · Data",
+    "text": "Multi-company data scoped by <code>companyId</code>."
+  },
+  "governedTools": "governed tools",
+  "agents": {
+    "title": "GMO AI Agents",
+    "tech": "Agentic Intelligence Layer",
+    "text": "Specialized agents, reasoning, orchestration, RAG, governed tools and application support."
+  },
+  "factory": {
+    "tech": "Autonomous Engineering System",
+    "flow": ["Understand", "Reason", "Plan", "Implement", "Review"],
+    "flowLast": "Evolve"
+  }
+}

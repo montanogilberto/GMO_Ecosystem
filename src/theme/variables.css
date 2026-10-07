@@ -1,0 +1,18 @@
+/* Ionic theme: dark GMO palette (the color tokens themselves are in layout/base.css). */
+:root {
+  --ion-background-color: #070b16;
+  --ion-background-color-rgb: 7, 11, 22;
+  --ion-text-color: #e8edf8;
+  --ion-text-color-rgb: 232, 237, 248;
+  --ion-font-family: Inter, system-ui, -apple-system, sans-serif;
+  --ion-toolbar-background: rgba(7, 11, 22, 0.82);
+  --ion-toolbar-color: #e8edf8;
+  --ion-toolbar-border-color: #24314f;
+  --ion-item-background: transparent;
+  --ion-border-color: #24314f;
+  --ion-color-primary: #8b7cff;
+  --ion-color-primary-rgb: 139, 124, 255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-shade: #7a6de0;
+  --ion-color-primary-tint: #9789ff;
+}

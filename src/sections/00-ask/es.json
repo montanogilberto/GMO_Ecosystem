@@ -1,0 +1,138 @@
+{
+  "eyebrow": "Pregunta a la Factory",
+  "title": "Cuéntanos qué necesita tu negocio.",
+  "intro": "Escríbelo o simplemente habla — el micrófono escribe lo que dices. El agente de Business Intake de la Factory revisa lo que ya existe en el ecosistema de desarrollo de apps de GMO y te dice qué se puede reutilizar, qué se debe extender y qué se debe crear. Sigue conversando para agregar detalles o responder sus preguntas.",
+  "placeholder": "Ej. Soy abogada y voy a abrir mi despacho. Necesito registrar a mis clientes y seguir el proceso legal de cada uno.",
+  "replyPlaceholder": "Responde o agrega más detalles…",
+  "inputLabel": "Describe la necesidad de tu negocio",
+  "websiteLabel": "Tu sitio web (opcional) — la Factory lo lee para entender tu negocio",
+  "websitePlaceholder": "https://tu-negocio.com",
+  "send": "Enviar",
+  "newChat": "↺ Nueva conversación",
+  "examplesLabel": "Prueba:",
+  "examples": [
+    "Soy abogado: necesito registrar a mis clientes y seguir su proceso legal",
+    "Tengo una lavandería y quiero premiar a los clientes que regresan",
+    "Vendo agua purificada por ruta y necesito llevar los rellenos por cliente"
+  ],
+  "note": "Solo análisis — no se crea ni se modifica nada en GMO.",
+  "data": {
+    "mic": {
+      "start": "Dictar con el micrófono",
+      "stop": "Detener dictado",
+      "listening": "● Escuchando… habla y tus palabras aparecen en el cuadro. Toca 🎙️ para detener.",
+      "unsupported": "El dictado por voz no está disponible en este dispositivo o navegador. Prueba Chrome o Safari, o usa la tecla de dictado de tu teclado.",
+      "denied": "El acceso al micrófono o al reconocimiento de voz está bloqueado. Permítelo en tu navegador o en los ajustes del dispositivo para dictar.",
+      "failed": "El dictado se detuvo inesperadamente. Intenta de nuevo."
+    },
+    "empty": "Primero escribe o dicta tu necesidad.",
+    "steps": [
+      "Entendiendo tu necesidad…",
+      "Revisando lo que ya existe en el ecosistema de desarrollo de apps…",
+      "Razonando qué reutilizar, qué extender y qué crear…"
+    ],
+    "errors": {
+      "network": "El agente de la Factory no está disponible en este momento. Intenta más tarde.",
+      "timeout": "El análisis tardó demasiado. Intenta de nuevo.",
+      "rateLimited": "Demasiados análisis desde tu conexión. Intenta más tarde.",
+      "generic": "Algo salió mal al analizar tu solicitud. Intenta de nuevo."
+    },
+    "labels": {
+      "understood": "Lo que entendimos",
+      "asCompany": "Opera como empresa en",
+      "extend": "Extender — desarrollo en GMO",
+      "create": "Nueva capacidad de GMO",
+      "tenant": "Aislamiento de datos",
+      "risks": "Riesgos",
+      "questions": "Preguntas para ti",
+      "prd": "Desarrollo para GMO (PRD Builder)",
+      "evidence": "Evidencia revisada",
+      "verified": "Verificado en los repositorios",
+      "assumptions": "No verificado",
+      "copy": "Copiar",
+      "copied": "Copiado",
+      "clarify": "La Factory necesita un detalle más",
+      "layers": {
+        "database": "Base de datos",
+        "backend": "Backend",
+        "frontend": "Frontend",
+        "mobile": "App móvil",
+        "web": "Web",
+        "agents": "Agentes de IA",
+        "notifications": "Notificaciones",
+        "security": "Seguridad"
+      },
+      "factory": "Factory",
+      "websiteRead": "También leímos tu sitio web:",
+      "websiteError": "No pudimos leer tu sitio web:",
+      "workflow": "El flujo de tu negocio",
+      "basis": {
+        "verified": "lo dijiste tú",
+        "inferred": "inferido, sin confirmar",
+        "unknown": "desconocido"
+      },
+      "capabilities": "Capacidades necesarias",
+      "decisions": {
+        "REUSE": "Reutilizar",
+        "CONFIGURE": "Configurar",
+        "EXTEND": "Extender",
+        "INVESTIGATE": "Investigar",
+        "CREATE": "Crear",
+        "NOT_APPLICABLE": "No aplica"
+      },
+      "investigate": "Investigar antes de decidir",
+      "notApplicable": "No aplica",
+      "existing": "Capacidades de GMO que ya existen",
+      "extension": "Por agregar",
+      "known": "Se sabe",
+      "unknowns": "Se desconoce",
+      "inspect": "Por revisar",
+      "whyNotReuse": "Por qué no reutilizar",
+      "candidates": "Módulos de GMO revisados",
+      "evidenceLevels": {
+        "implementation-verified": "implementación verificada",
+        "partially-verified": "verificado en parte",
+        "agent-endpoint-documented": "endpoint del agente documentado",
+        "catalog-only": "solo en el catálogo — sin verificar"
+      },
+      "readinessTitle": "¿Puede operar este negocio en GMO hoy?",
+      "readiness": {
+        "READY": "Listo — únete a GMO y empieza",
+        "READY_WITH_CONFIGURATION": "Listo con configuración",
+        "READY_AFTER_EXTENSION": "Listo después de un desarrollo en GMO",
+        "NEEDS_BUSINESS_CLARIFICATION": "Primero necesitamos tus respuestas",
+        "NEEDS_REPOSITORY_INVESTIGATION": "Primero hay que revisar los repositorios",
+        "NEEDS_BOTH": "Necesitamos tus respuestas y revisar los repositorios"
+      },
+      "onboarding": "Tu incorporación a GMO",
+      "onboardingPlan": "Pasos para empezar a operar",
+      "today": "Hoy",
+      "configurationRequired": "Configurar",
+      "configuration": "Configuración — sin desarrollo",
+      "layerStatus": {
+        "AVAILABLE": "disponible",
+        "PARTIAL": "parcial",
+        "MISSING": "no existe",
+        "UNKNOWN": "sin verificar"
+      },
+      "mobileExperience": "En la app móvil de GMO",
+      "webExperience": "En la plataforma web de GMO",
+      "infrastructure": "Infraestructura que necesitas",
+      "infrastructureItems": {
+        "newWebsite": "Tu propio sitio web",
+        "newMobileApp": "Tu propia app móvil",
+        "newBackend": "Tu propio backend",
+        "newDatabase": "Tu propia base de datos",
+        "newDeployment": "Tu propio despliegue",
+        "newHosting": "Tu propio hosting"
+      },
+      "yes": "sí",
+      "no": "no",
+      "developmentTypes": {
+        "EXTEND_CAPABILITY": "Extender una capacidad de GMO",
+        "NEW_CAPABILITY": "Nueva capacidad de GMO"
+      },
+      "recommendation": "Recomendación de la Factory"
+    }
+  }
+}

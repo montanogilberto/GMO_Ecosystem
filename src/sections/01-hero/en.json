@@ -1,0 +1,26 @@
+{
+  "title1": "One Factory.",
+  "title2": "One Ecosystem.",
+  "title3": "N Companies.",
+  "tagline": "An autonomous agentic software factory built to understand, reason about and evolve business software.",
+  "lead": "GMO Factory is not simply a code generator. It is an <b>agentic software engineering system</b> where specialized AI agents understand the business context, reason about possible solutions, coordinate with other agents, use governed engineering tools and build software that adapts to the way each company operates.",
+  "highlight": {
+    "needTitle": "The company defines what it needs.",
+    "needText": "The Factory reasons about how the software should evolve to support that business.",
+    "adaptTitle": "Software adapts to the business.",
+    "adaptText": "The company does not have to adapt its operation to a rigid software process."
+  },
+  "flow": ["Business Need", "Understand", "Reason", "Plan", "Build", "Validate"],
+  "flowLast": "Evolve",
+  "cta": {
+    "explore": "Explore the Ecosystem",
+    "thinks": "How Factory Thinks"
+  },
+  "stats": {
+    "repos": "repositories coordinated",
+    "apps": "core applications",
+    "capabilities": "cross-cutting business capabilities",
+    "ai": "AI intelligence layer",
+    "companies": "companies on POS GMO"
+  }
+}

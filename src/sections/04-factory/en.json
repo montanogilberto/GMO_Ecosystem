@@ -1,0 +1,29 @@
+{
+  "eyebrow": "What is Factory App?",
+  "title": "A software factory that reasons about the business.",
+  "intro": "Factory is an <b>agentic software engineering system</b>. Its agents do not simply generate code from instructions. They first understand the business context, inspect the existing ecosystem, reason about possible implementations and coordinate the work required to evolve the software.",
+  "quote": "“Agents reason. Governed tools act.”",
+  "principles": [
+    { "title": "Understand", "text": "Discover the business, applications, architecture and existing implementation." },
+    { "title": "Reason", "text": "Analyze alternatives, dependencies, risks and consequences." },
+    { "title": "Coordinate", "text": "Specialized agents collaborate across domains and repositories." },
+    { "title": "Build", "text": "Governed tools implement the approved engineering plan." },
+    { "title": "Validate", "text": "Tests, reviews and ecosystem consistency checks verify the result." },
+    { "title": "Evolve", "text": "The software can continuously adapt as business requirements change." }
+  ],
+  "questionsTitle": "Before changing software, Factory asks:",
+  "questions": [
+    "What does the company actually need?",
+    "How does this company operate today?",
+    "What already exists in GMO?",
+    "Where should this capability live?",
+    "Which applications are affected?",
+    "Which frontend screens and APIs are involved?",
+    "Which backend services, stored procedures and tables are involved?",
+    "Which AI agents need to participate?",
+    "Does the solution preserve the multi-company model?",
+    "What could break?",
+    "What is the safest implementation?",
+    "How should the result be validated?"
+  ]
+}

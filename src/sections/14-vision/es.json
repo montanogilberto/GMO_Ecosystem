@@ -1,0 +1,19 @@
+{
+  "eyebrow": "La visión",
+  "title": "Software que se adapta al negocio.",
+  "lead": "Estamos construyendo un ecosistema donde las empresas no tienen que reorganizar su operación alrededor de un software rígido. En su lugar, una Factory agéntica y autónoma entiende el negocio, razona sobre sus necesidades y evoluciona continuamente el software que lo soporta.",
+  "pillars": {
+    "business": "Sistemas de negocio",
+    "agents": "Agentes de IA",
+    "factory": "Fábrica de ingeniería"
+  },
+  "equation": {
+    "need": "Necesidad de negocio",
+    "reasoning": "Razonamiento agéntico",
+    "engineering": "Ingeniería gobernada",
+    "result": "Software en evolución"
+  },
+  "motto": "Entender. Razonar. Construir. Validar. Evolucionar.",
+  "tagline": "Una Factory. Un Ecosistema. N Empresas.",
+  "backToTop": "Volver arriba"
+}

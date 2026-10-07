@@ -1,0 +1,61 @@
+/* Ecosystem map: Factory → Ecosystem → 3 apps → AI layer → Rewards → Notifications → Customer. */
+.eco { display: flex; flex-direction: column; align-items: center; }
+.eco-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; width: 100%; max-width: 860px; }
+.eco-line { width: 2px; height: 28px; background: linear-gradient(var(--line), var(--factory)); }
+.eco-line.labeled { position: relative; height: 40px; }
+.eco-line.labeled span { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); white-space: nowrap; font-size: .74rem; color: var(--muted); font-family: var(--mono); }
+
+.eco-node { --c: var(--factory); position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2px; width: 100%; padding: 18px 16px; border-radius: var(--radius); background: var(--panel); border: 1px solid var(--line); color: var(--text); font: inherit; cursor: pointer; transition: .2s; }
+.eco-node::before { content: ""; position: absolute; inset: 0; border-radius: inherit; border-top: 3px solid var(--c); pointer-events: none; }
+.eco-node:hover, .eco-node.active { border-color: var(--c); box-shadow: 0 0 0 1px var(--c), 0 12px 40px -18px var(--c); transform: translateY(-2px); }
+.eco-node .ico { font-size: 1.6rem; }
+.eco-node b { font-size: 1.05rem; }
+.eco-node small { color: var(--muted); font-size: .8rem; }
+.eco-node.factory { --c: var(--factory); max-width: 420px; background: linear-gradient(160deg, rgba(139,124,255,.22), var(--panel)); }
+.eco-node.ecosystem { --c: var(--platform); max-width: 520px; }
+.eco-node.pos { --c: var(--pos); }
+.eco-node.loans { --c: var(--loans); }
+.eco-node.arcade { --c: var(--arcade); }
+.eco-node.rewards { --c: var(--rewards); }
+.eco-node.notif { --c: var(--notif); }
+.eco-node.ai { --c: var(--ai); }
+.eco-node.customer { --c: #cbd5e1; max-width: 360px; cursor: default; }
+.eco-node.static:hover { transform: none; box-shadow: none; border-color: var(--line); }
+
+.co-stack { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; margin-top: 10px; }
+.co-stack em { font-style: normal; font-size: .7rem; font-family: var(--mono); padding: 2px 7px; border-radius: 6px; background: rgba(34,199,184,.12); color: var(--pos); }
+
+.eco-node.band { flex-direction: row; justify-content: center; flex-wrap: wrap; gap: 4px 10px; max-width: 860px; margin-top: 16px; padding: 12px 16px; border-style: dashed; background: rgba(167,139,250,.08); }
+.eco-node.band .ico { font-size: 1.2rem; }
+
+.eco-cross { position: relative; display: flex; justify-content: center; width: 100%; max-width: 900px; padding: 30px 20px 20px; border: 1px dashed var(--line); border-radius: 18px; }
+.cross-label { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: var(--bg); padding: 0 12px; color: var(--muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; white-space: nowrap; }
+.eco-chain { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; }
+.eco-chain .eco-node { max-width: 300px; }
+.chain-arrow { font-size: 1.4rem; color: var(--muted); }
+
+.eco-detail { --c: var(--factory); margin: 32px auto 0; max-width: 860px; min-height: 120px; padding: 24px 26px; background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--c); border-radius: var(--radius); }
+.eco-detail h3 { margin-bottom: .3em; }
+.eco-detail ul { margin: .4em 0 0; padding-left: 1.1em; color: var(--muted); columns: 2; column-gap: 32px; }
+.eco-detail .note { margin-top: 12px; padding: 10px 14px; border-radius: 10px; background: var(--panel-2); font-size: .9rem; }
+
+.story { margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 28px; }
+.story p { margin: 0; color: var(--muted); }
+
+@media (max-width: 1000px) {
+  .story { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 860px) {
+  .eco-detail ul { columns: 1; }
+}
+@media (max-width: 600px) {
+  .eco-row { grid-template-columns: 1fr; gap: 10px; }
+  .eco-cross { padding: 28px 12px 12px; }
+  .eco-chain { flex-direction: column; }
+  .chain-arrow { transform: rotate(90deg); }
+  .eco-detail { padding: 18px; }
+  .story { grid-template-columns: 1fr; }
+  .cross-label { white-space: normal; text-align: center; width: max-content; max-width: 90%; }
+  .eco-line.labeled { height: 64px; }
+  .eco-line.labeled span { white-space: normal; width: 40vw; }
+}

@@ -1,0 +1,132 @@
+{
+  "eyebrow": "The GMO Ecosystem",
+  "title": "One Factory. Multiple applications. N businesses.",
+  "intro": "GMO Factory sits above the ecosystem and continuously understands, builds and evolves the software underneath it. Select any box to see what it does.",
+  "map": {
+    "factory": "Autonomous Agentic Software Factory",
+    "factoryVerbs": "Understands · Reasons · Builds · Evolves",
+    "ecosystem": "GMO Ecosystem",
+    "ecosystemNote": "3 core applications · shared capabilities",
+    "pos": "Multi-company business platform",
+    "company": "Company",
+    "loans": "Loans between people",
+    "arcade": "Gaming & Entertainment",
+    "ai": "AI Agents",
+    "aiNote": "Agentic intelligence, reasoning and orchestration across the ecosystem",
+    "crossCutting": "Cross-cutting business capabilities",
+    "rewards": "Cross-App Loyalty",
+    "notifications": "Notifications",
+    "customer": "Customer Relationship",
+    "customerNote": "One customer relationship across GMO"
+  },
+  "story": {
+    "factory": "understands and evolves the ecosystem.",
+    "pos": "operates businesses from Company 1 → Company N.",
+    "loans": "lets people lend money to each other.",
+    "arcade": "provides gaming and entertainment.",
+    "rewards": "connects customer loyalty across applications.",
+    "notifications": "create the next customer contact.",
+    "ai": "provide the reasoning and intelligence layer."
+  },
+  "data": {
+    "nodes": {
+      "factory": {
+        "title": "🏭 GMO Factory: Autonomous Agentic Software Factory",
+        "text": "The engineering intelligence above the ecosystem. Its agents understand the business, reason about solutions and evolve the software through governed tools.",
+        "items": [
+          "Understands business needs and the existing ecosystem",
+          "Builds the Ecosystem Graph",
+          "Multi-agent reasoning with a Decision Gate",
+          "Agentic Engineering Work Plans before code",
+          "Coordinated changes across 4 repositories",
+          "Validation, review and fix loop",
+          "Controlled delivery as Pull Requests"
+        ]
+      },
+      "ecosystem": {
+        "title": "🧩 GMO Ecosystem",
+        "text": "Everything Factory builds and evolves: three core applications, two cross-cutting business capabilities and one AI intelligence layer.",
+        "items": [
+          "3 core applications: POS GMO, SmartLoans, Arcade / Casino",
+          "2 cross-cutting capabilities: Rewards, Notifications",
+          "1 intelligence layer: AI Agents",
+          "N companies on POS GMO"
+        ],
+        "note": "Laundry, Grocery and Retail are companies using POS GMO. They are not separate GMO applications."
+      },
+      "pos": {
+        "title": "🏪 POS GMO: Multi-company Business Platform",
+        "text": "The multi-company business platform of GMO, serving Company 1 → Company N with tenant-isolated data.",
+        "items": [
+          "Company 1 → Company N, tenant-isolated",
+          "Clients, follow-up, map, QR and KYC",
+          "Sales, expenses, orders and tickets (SMS · WhatsApp · email)",
+          "Products, inventory, suppliers and manufacturing costs",
+          "Accounting, dashboard and alerts",
+          "Employees, users and roles",
+          "Rewards, notifications and emails",
+          "AI agents: support, inventory registration, restock alerts, service payments"
+        ]
+      },
+      "loans": {
+        "title": "💰 SmartLoans: Loans between people",
+        "text": "Connects people who need a loan with people who want to lend their money, with AI helping along the way. SmartLoans is not a bank: the money goes from one person to another.",
+        "items": [
+          "Borrowers, lenders and juridical clients",
+          "KYC and face/liveness verification",
+          "Contracts and Pagaré",
+          "Payment intents and funding transactions",
+          "SPEI · STP · AMEX · CoDi · Debit · CLABE",
+          "AI orchestration"
+        ],
+        "note": "AI does not determine credit limits. Money movement remains approval-controlled."
+      },
+      "arcade": {
+        "title": "🎰 Arcade / Casino: Gaming & Entertainment",
+        "text": "A dedicated GMO application for gaming and entertainment, connected to the customer ecosystem through Rewards.",
+        "items": [
+          "Its own workflows and business rules",
+          "Separate gaming credits",
+          "Games as an engagement channel",
+          "Connected to Rewards",
+          "Runs alongside POS GMO"
+        ],
+        "note": "Arcade / Casino credits are not money and not Rewards points."
+      },
+      "rewards": {
+        "title": "🎁 Rewards: Cross-App Loyalty",
+        "text": "The loyalty capability that connects customer activity across GMO applications. It is cross-cutting, not a fourth application.",
+        "items": [
+          "Earn from POS tickets (earnFromTicket)",
+          "Customer Rewards Ledger",
+          "Balance, history and benefits",
+          "Customer dashboard",
+          "Triggers notifications"
+        ],
+        "note": "Uses the income as the source event and never touches the accounting ledger."
+      },
+      "notif": {
+        "title": "🔔 Notifications: Customer Communication",
+        "text": "A cross-cutting capability that turns ecosystem events into the next customer contact.",
+        "items": [
+          "Push notifications",
+          "WhatsApp",
+          "SMS",
+          "Driven by POS and Rewards events"
+        ]
+      },
+      "ai": {
+        "title": "🤖 AI Agents: Agentic Intelligence Layer",
+        "text": "Specialized agents that reason, orchestrate and assist across the ecosystem, using governed tools only.",
+        "items": [
+          "Multi-model agents (any LLM provider)",
+          "RAG with hybrid retrieval (embeddings + RRF)",
+          "Tool-based execution",
+          "Human approval workflows",
+          "Evaluation framework"
+        ],
+        "note": "Agents reason. Governed tools act."
+      }
+    }
+  }
+}

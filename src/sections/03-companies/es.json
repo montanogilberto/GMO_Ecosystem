@@ -1,0 +1,56 @@
+{
+  "eyebrow": "POS GMO · Hecho para N empresas",
+  "title1": "Negocios diferentes.",
+  "title2": "Software que se adapta a cada uno.",
+  "intro": "<b>POS GMO</b> es una plataforma de negocios multiempresa que atiende de la Empresa 1 a la Empresa N. Cada empresa puede tener sus propios productos, servicios, flujos de trabajo, reglas operativas y necesidades. Una lavandería, tienda de abarrotes, purificadora de agua, comercio o manufacturera es una <b>empresa que usa POS GMO</b>, no una aplicación GMO separada.",
+  "tabsLabel": "Ejemplos de empresas / giros en POS GMO",
+  "isolated": "aislado por empresa",
+  "rule": {
+    "title": "Aislamiento por empresa",
+    "text": "<code>companyId</code> proviene del <b>contexto de sesión autenticada</b>. Nunca proviene de un agente de IA ni de la salida de un LLM.",
+    "login": "Inicio de sesión",
+    "session": "Sesión",
+    "storedProcedure": "Procedimiento almacenado"
+  },
+  "factory": {
+    "title": "Qué significa esto para Factory",
+    "notThis": "Factory no construye <b>“Inventario para Lavandería”</b>.",
+    "butThis": "Construye una <b>capacidad genérica de POS</b> que puede adaptarse a la Empresa A, B, C y N.",
+    "flow": ["Requerimiento de negocio", "Razonamiento agéntico", "Capacidad genérica"],
+    "flowLast": "Empresa A · B · C · … · N"
+  },
+  "data": {
+    "companies": [
+      {
+        "tab": "🧺 Lavandería", "id": "001", "name": "Empresa A · Lavandería",
+        "desc": "Servicios de lavado, secado y planchado con precio por kilo, tickets y promociones para clientes.",
+        "modules": [["Servicios", "lavado · secado · planchado"], ["Precios", "por kg / por prenda"], ["Tickets", "recolección y entrega"], ["Clientes", "clientes propios"], ["Rewards", "por empresa"], ["WhatsApp", "listo para recoger"]]
+      },
+      {
+        "tab": "🛒 Abarrotes", "id": "002", "name": "Empresa B · Abarrotes",
+        "desc": "Catálogo de productos, proveedores, ventas diarias y control de gastos.",
+        "modules": [["Productos", "catálogo SKU"], ["Proveedores", "compras"], ["Ingresos", "ventas diarias"], ["Gastos", "operación"], ["Rewards", "puntos por ticket"], ["Reportes", "márgenes"]]
+      },
+      {
+        "tab": "💧 Agua purificada", "id": "003", "name": "Empresa C · Agua purificada",
+        "desc": "Rellenos, clientes por ruta y clientes recurrentes.",
+        "modules": [["Productos", "garrafones"], ["Clientes", "rutas"], ["Pagos", "efectivo y transferencia"], ["Notificaciones", "recordatorios de rellenado"], ["Rewards", "rellenos de lealtad"], ["Contabilidad", "balance"]]
+      },
+      {
+        "tab": "🛍️ Comercio", "id": "004", "name": "Empresa D · Comercio",
+        "desc": "Operación de tienda con facturas, promociones y contabilidad.",
+        "modules": [["Productos", "inventario"], ["Facturas", "CFDI"], ["Promociones", "campañas"], ["Contabilidad", "estado de resultados"], ["Rewards", "beneficios para miembros"], ["Push", "ofertas"]]
+      },
+      {
+        "tab": "🏭 Manufactura", "id": "005", "name": "Empresa E · Manufactura",
+        "desc": "Flujos de producción integrados en la misma plataforma de negocios POS.",
+        "modules": [["Manufactura", "órdenes de producción"], ["Proveedores", "materia prima"], ["Productos", "producto terminado"], ["Gastos", "costos"], ["Contabilidad", "balance"], ["Reportes", "producción"]]
+      },
+      {
+        "tab": "➕ Empresa N", "id": "N", "name": "Empresa N · Cualquier negocio",
+        "desc": "Usuarios · Roles · Clientes · Productos · Transacciones · Contabilidad · Configuración · Rewards · Notificaciones, sin necesidad de una nueva aplicación.",
+        "modules": [["Configuración POS", "por empresa"], ["Usuarios / Roles", "equipo propio"], ["Clientes", "datos propios"], ["Ingresos / Gastos", "libro propio"], ["Rewards", "programa propio"], ["Notificaciones", "canales propios"]]
+      }
+    ]
+  }
+}

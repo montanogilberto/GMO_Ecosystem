@@ -1,0 +1,36 @@
+/* Top bar (IonHeader), EN / ES switch and the side menu. */
+.nav ion-toolbar { --background: rgba(7, 11, 22, .82); --border-color: var(--line); --padding-start: 0; --padding-end: 0; --min-height: 64px; backdrop-filter: blur(12px); }
+.nav-inner { display: flex; align-items: center; height: 64px; }
+.brand { font-size: 1.1rem; font-weight: 600; letter-spacing: .02em; white-space: nowrap; color: var(--text); }
+.brand-mark { color: var(--factory); }
+.nav-links { display: flex; gap: 4px; margin-left: auto; }
+.nav-links a { padding: 8px 12px; border-radius: 8px; color: var(--muted); font-size: .92rem; font-weight: 500; transition: .2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--text); background: var(--panel); }
+
+.lang { display: flex; margin-left: 12px; border: 1px solid var(--line); border-radius: 999px; padding: 3px; background: var(--panel); }
+.lang a { color: var(--muted); font-size: .78rem; font-weight: 700; letter-spacing: .04em; padding: 5px 11px; border-radius: 999px; transition: .2s; }
+.lang a:hover { color: var(--text); }
+.lang a.active { background: var(--factory); color: #fff; }
+
+.nav-toggle { display: none; margin-left: 6px; --color: var(--text); }
+
+/* Side menu */
+.nav-menu { --width: 280px; --background: var(--bg); }
+.nav-menu ion-toolbar { --background: var(--bg); --border-color: var(--line); }
+.nav-menu-head { display: flex; align-items: center; justify-content: space-between; padding: 0 16px; }
+.nav-menu ion-item { --color: var(--muted); --background-hover: var(--panel); margin: 2px 10px; border-radius: 10px; font-weight: 500; }
+.nav-menu ion-item.active { --color: var(--text); --background: var(--panel); }
+
+/* Below 1100px the links move into the side menu */
+@media (max-width: 1100px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .nav-inner > .lang { margin-left: auto; }
+}
+@media (min-width: 1101px) {
+  .nav-menu { display: none; }
+}
+@media (max-width: 360px) {
+  .brand { font-size: 1rem; }
+  .lang a { padding: 5px 8px; }
+}

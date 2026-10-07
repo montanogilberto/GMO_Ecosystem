@@ -1,0 +1,21 @@
+/* What is Factory: intro, six principles, and the questions Factory asks. */
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.two > * { min-width: 0; }
+blockquote { margin: 1em 0 0; padding: 18px 22px; border-left: 4px solid var(--factory); background: var(--panel); border-radius: 0 var(--radius) var(--radius) 0; font-size: 1.3rem; font-weight: 700; }
+
+.principles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 24px; }
+.principles div { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+.principles span { font-family: var(--mono); font-size: .8rem; color: var(--factory); margin-right: 8px; }
+.principles b { font-size: 1rem; }
+.principles p { margin: 4px 0 0; color: var(--muted); font-size: .88rem; }
+
+.questions { list-style: none; padding: 0; margin: 0; counter-reset: q; display: grid; gap: 8px; }
+.questions li { counter-increment: q; position: relative; padding: 11px 14px 11px 52px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; }
+.questions li::before { content: counter(q, decimal-leading-zero); position: absolute; left: 14px; top: 11px; font-family: var(--mono); color: var(--factory); font-size: .85rem; }
+
+@media (max-width: 860px) {
+  .two { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .principles { grid-template-columns: 1fr; }
+}

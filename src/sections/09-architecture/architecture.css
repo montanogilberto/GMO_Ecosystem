@@ -1,0 +1,13 @@
+/* Architecture: the four repositories stacked as layers. */
+.arch { display: flex; flex-direction: column; align-items: stretch; max-width: 820px; margin: 0 auto; }
+.layer { --c: var(--pos); background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--c); border-radius: var(--radius); padding: 18px 22px; }
+.layer p { color: var(--muted); margin: .2em 0 .6em; }
+.layer .chips, .layer .mini-flow { margin-bottom: 0; }
+.layer-h { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.layer-h .mono { color: var(--c); }
+.layer.fe { --c: var(--pos); }
+.layer.be { --c: var(--platform); }
+.layer.db { --c: var(--rewards); }
+.layer.agents { --c: var(--ai); }
+.layer.factory { --c: var(--factory); background: linear-gradient(160deg, rgba(139,124,255,.16), var(--panel)); }
+.arrow { text-align: center; color: var(--muted); font-family: var(--mono); font-size: .78rem; padding: 8px 0; }

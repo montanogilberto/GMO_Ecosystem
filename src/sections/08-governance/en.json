@@ -1,0 +1,20 @@
+{
+  "eyebrow": "Governance & Safety",
+  "title": "Autonomy with engineering control",
+  "intro": "Autonomous does not mean unrestricted. Agents reason independently while execution remains governed by explicit technical and business rules.",
+  "rules": [
+    { "title": "No unrestricted DB access", "text": "Agents use governed backend/API tools only." },
+    { "title": "No invented schema", "text": "Factory works from repository and database truth." },
+    { "title": "Tenant isolation", "text": "<code>companyId</code> comes from authenticated context, never from an LLM." },
+    { "title": "Human approval", "text": "Sensitive operations require explicit approval." },
+    { "title": "Auditability", "text": "Important decisions and tool actions are logged." },
+    { "title": "Money is approval-controlled", "text": "Financial movements always stay behind approval." }
+  ],
+  "ladderTitle": "Autonomy ladder",
+  "ladder": [
+    { "step": "READ", "note": "Inspect & understand" },
+    { "step": "PROPOSE", "note": "Plan & recommend" },
+    { "step": "EXECUTE WITH APPROVAL", "note": "Human in the loop" },
+    { "step": "AUTO", "note": "Proven low-risk actions" }
+  ]
+}

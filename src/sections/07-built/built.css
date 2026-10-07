@@ -1,0 +1,10 @@
+/* What we built: four cards of existing foundations. */
+.built-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.rels { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.rels li { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-family: var(--mono); font-size: .82rem; }
+.rels span { background: var(--panel-2); padding: 6px 10px; border-radius: 8px; }
+.rels i { color: var(--factory); font-style: normal; }
+
+@media (max-width: 860px) {
+  .built-grid { grid-template-columns: 1fr; }
+}

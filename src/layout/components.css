@@ -1,0 +1,61 @@
+/* Small building blocks reused by several sections. */
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 22px; border-radius: 10px; border: 1px solid transparent; cursor: pointer; font: inherit; font-weight: 600; transition: .2s; }
+.btn.primary { background: linear-gradient(135deg, var(--factory), #5e8bff); color: #fff; box-shadow: 0 8px 30px -10px var(--factory); }
+.btn.primary:hover { transform: translateY(-2px); }
+.btn.ghost { border-color: var(--line); color: var(--text); background: transparent; }
+.btn.ghost:hover { background: var(--panel); }
+.btn.small { padding: 8px 14px; font-size: .88rem; }
+
+/* Cards and callouts */
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+.callout { margin-top: 14px; padding: 14px 16px; border-radius: 12px; background: var(--panel-2); border: 1px solid var(--line); font-size: .94rem; }
+.callout.big { margin-top: 32px; padding: 22px 24px; border-color: var(--factory); background: linear-gradient(160deg, rgba(139,124,255,.12), var(--panel)); color: var(--muted); }
+.callout.big b { color: var(--text); }
+
+/* Chips: small rounded labels */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.chips span { font-size: .8rem; background: var(--panel-2); border: 1px solid var(--line); padding: 4px 10px; border-radius: 999px; }
+
+/* Mini flow: A → B → C (add .col for a vertical flow) */
+.mini-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 10px 0 18px; font-family: var(--mono); font-size: .78rem; }
+.mini-flow span { background: var(--panel-2); border: 1px solid var(--line); padding: 4px 10px; border-radius: 8px; }
+.mini-flow i { color: var(--muted); font-style: normal; }
+.mini-flow.col { flex-direction: column; align-items: flex-start; gap: 4px; }
+.mini-flow.col i { padding-left: 14px; }
+
+/* Check lists */
+.checks { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.checks li { padding-left: 26px; position: relative; color: var(--muted); }
+.checks li::before { content: "✓"; position: absolute; left: 0; color: var(--loans); font-weight: 700; }
+
+/* Layer tags (Frontend / API / Backend / SQL / AI) and status dots */
+.tag { display: inline-block; min-width: 68px; text-align: center; font-size: .68rem; padding: 2px 6px; border-radius: 6px; margin-right: 8px; font-weight: 600; }
+.tag.fe { background: rgba(34,199,184,.16); color: var(--pos); }
+.tag.api { background: rgba(56,189,248,.16); color: var(--notif); }
+.tag.be { background: rgba(139,124,255,.18); color: var(--factory); }
+.tag.db { background: rgba(255,181,52,.16); color: var(--rewards); }
+.tag.ai { background: rgba(167,139,250,.18); color: var(--ai); }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+.dot.ok { background: var(--loans); }
+.dot.miss { background: var(--arcade); }
+
+/* Text colors per application */
+.c-factory { color: var(--factory) !important; }
+.c-pos { color: var(--pos) !important; }
+.c-loans { color: var(--loans) !important; }
+.c-arcade { color: var(--arcade) !important; }
+.c-rewards { color: var(--rewards) !important; }
+.c-notif { color: var(--notif) !important; }
+.c-ai { color: var(--ai) !important; }
+
+/* Flow strip: Step → Step → Step (used by hero, how-it-works, vision) */
+.flow-strip { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-family: var(--mono); font-size: .85rem; }
+.flow-strip span { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: rgba(17,26,48,.7); }
+.flow-strip i { color: var(--muted); font-style: normal; }
+
+@media (max-width: 600px) {
+  .card { padding: 20px; }
+  .flow-strip { font-size: .76rem; }
+}

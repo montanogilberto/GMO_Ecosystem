@@ -1,0 +1,132 @@
+{
+  "eyebrow": "El ecosistema GMO",
+  "title": "Una Factory. Múltiples aplicaciones. N negocios.",
+  "intro": "GMO Factory está por encima del ecosistema y continuamente entiende, construye y evoluciona el software que hay debajo. Selecciona cualquier recuadro para ver qué hace.",
+  "map": {
+    "factory": "Fábrica de software agéntica y autónoma",
+    "factoryVerbs": "Entiende · Razona · Construye · Evoluciona",
+    "ecosystem": "Ecosistema GMO",
+    "ecosystemNote": "3 aplicaciones principales · capacidades compartidas",
+    "pos": "Plataforma de negocios multiempresa",
+    "company": "Empresa",
+    "loans": "Préstamos entre personas",
+    "arcade": "Juegos y entretenimiento",
+    "ai": "Agentes de IA",
+    "aiNote": "Inteligencia agéntica, razonamiento y orquestación en todo el ecosistema",
+    "crossCutting": "Capacidades de negocio transversales",
+    "rewards": "Lealtad entre apps",
+    "notifications": "Notificaciones",
+    "customer": "Relación con el cliente",
+    "customerNote": "Una sola relación con el cliente en todo GMO"
+  },
+  "story": {
+    "factory": "entiende y evoluciona el ecosistema.",
+    "pos": "opera negocios de la Empresa 1 → Empresa N.",
+    "loans": "permite que las personas se presten dinero entre sí.",
+    "arcade": "ofrece juegos y entretenimiento.",
+    "rewards": "conecta la lealtad del cliente entre aplicaciones.",
+    "notifications": "generan el siguiente contacto con el cliente.",
+    "ai": "aportan la capa de razonamiento e inteligencia."
+  },
+  "data": {
+    "nodes": {
+      "factory": {
+        "title": "🏭 GMO Factory: Fábrica de software agéntica y autónoma",
+        "text": "La inteligencia de ingeniería por encima del ecosistema. Sus agentes entienden el negocio, razonan sobre soluciones y evolucionan el software mediante herramientas gobernadas.",
+        "items": [
+          "Entiende las necesidades del negocio y el ecosistema existente",
+          "Construye el grafo del ecosistema",
+          "Razonamiento multiagente con puerta de decisión",
+          "Planes de trabajo de ingeniería agénticos antes del código",
+          "Cambios coordinados en 4 repositorios",
+          "Ciclo de validación, revisión y corrección",
+          "Entrega controlada mediante Pull Requests"
+        ]
+      },
+      "ecosystem": {
+        "title": "🧩 Ecosistema GMO",
+        "text": "Todo lo que Factory construye y evoluciona: tres aplicaciones principales, dos capacidades de negocio transversales y una capa de inteligencia con IA.",
+        "items": [
+          "3 aplicaciones principales: POS GMO, SmartLoans, Arcade / Casino",
+          "2 capacidades transversales: Rewards, Notificaciones",
+          "1 capa de inteligencia: Agentes de IA",
+          "N empresas en POS GMO"
+        ],
+        "note": "Lavandería, Abarrotes y Comercio son empresas que usan POS GMO. No son aplicaciones GMO separadas."
+      },
+      "pos": {
+        "title": "🏪 POS GMO: Plataforma de negocios multiempresa",
+        "text": "La plataforma de negocios multiempresa de GMO, que atiende de la Empresa 1 a la Empresa N con datos aislados.",
+        "items": [
+          "Empresa 1 → Empresa N, datos aislados",
+          "Clientes, seguimiento, mapa, QR y KYC",
+          "Ventas, gastos, pedidos y tickets (SMS · WhatsApp · email)",
+          "Productos, inventario, proveedores y costos de manufactura",
+          "Contabilidad, dashboard y alertas",
+          "Empleados, usuarios y roles",
+          "Rewards, notificaciones y emails",
+          "Agentes de IA: soporte, registro de inventario, alertas de compra, pago de servicios"
+        ]
+      },
+      "loans": {
+        "title": "💰 SmartLoans: Préstamos entre personas",
+        "text": "Conecta a personas que necesitan un préstamo con personas que quieren prestar su dinero, con la IA ayudando en el proceso. SmartLoans no es un banco: el dinero va de una persona a otra.",
+        "items": [
+          "Solicitantes, prestamistas y personas morales",
+          "KYC y verificación facial / prueba de vida",
+          "Contratos y Pagaré",
+          "Intenciones de pago y transacciones de fondeo",
+          "SPEI · STP · AMEX · CoDi · Débito · CLABE",
+          "Orquestación de IA"
+        ],
+        "note": "La IA no determina límites de crédito. El movimiento de dinero siempre requiere aprobación."
+      },
+      "arcade": {
+        "title": "🎰 Arcade / Casino: Juegos y entretenimiento",
+        "text": "Una aplicación GMO dedicada a juegos y entretenimiento, conectada al ecosistema del cliente mediante Rewards.",
+        "items": [
+          "Sus propios flujos y reglas de negocio",
+          "Créditos de juego separados",
+          "Los juegos como canal de interacción",
+          "Conectado con Rewards",
+          "Opera junto a POS GMO"
+        ],
+        "note": "Los créditos de Arcade / Casino no son dinero ni puntos de Rewards."
+      },
+      "rewards": {
+        "title": "🎁 Rewards: Lealtad entre apps",
+        "text": "La capacidad de lealtad que conecta la actividad del cliente entre aplicaciones GMO. Es transversal, no una cuarta aplicación.",
+        "items": [
+          "Acumula por tickets del POS (earnFromTicket)",
+          "Libro de puntos del cliente",
+          "Saldo, historial y beneficios",
+          "Panel del cliente",
+          "Dispara notificaciones"
+        ],
+        "note": "Usa el ingreso como evento de origen y nunca toca la contabilidad."
+      },
+      "notif": {
+        "title": "🔔 Notificaciones: Comunicación con el cliente",
+        "text": "Una capacidad transversal que convierte eventos del ecosistema en el siguiente contacto con el cliente.",
+        "items": [
+          "Notificaciones push",
+          "WhatsApp",
+          "SMS",
+          "Impulsadas por eventos de POS y Rewards"
+        ]
+      },
+      "ai": {
+        "title": "🤖 Agentes de IA: Capa de inteligencia agéntica",
+        "text": "Agentes especializados que razonan, orquestan y asisten en todo el ecosistema, usando solo herramientas gobernadas.",
+        "items": [
+          "Agentes multimodelo (cualquier proveedor de LLM)",
+          "RAG con recuperación híbrida (embeddings + RRF)",
+          "Ejecución basada en herramientas",
+          "Flujos de aprobación humana",
+          "Marco de evaluación"
+        ],
+        "note": "Los agentes razonan. Las herramientas gobernadas actúan."
+      }
+    }
+  }
+}

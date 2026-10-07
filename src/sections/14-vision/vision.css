@@ -1,0 +1,18 @@
+/* Vision: closing statement, three pillars, the "need + reasoning + engineering → evolving software" equation. */
+.vision { text-align: center; background: radial-gradient(700px 400px at 50% 0%, rgba(139,124,255,.22), transparent 70%); }
+.vision .lead { margin: 0 auto 32px; }
+.vision-tri { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+.vision-tri div { padding: 12px 22px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); font-weight: 600; }
+
+.vision-equation { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; margin: 0 auto 32px; max-width: 900px; }
+.vision-equation span { padding: 10px 16px; border-radius: 12px; background: var(--panel); border: 1px solid var(--line); font-weight: 600; }
+.vision-equation i { font-style: normal; font-size: 1.3rem; color: var(--factory); }
+.vision-equation strong { padding: 12px 20px; border-radius: 12px; color: #fff; background: linear-gradient(135deg, var(--factory), var(--pos)); }
+
+.motto { font-size: clamp(1.3rem, 3vw, 2rem); font-weight: 800; margin-bottom: 10px; }
+.motto-sub { color: var(--muted); font-weight: 600; margin-bottom: 28px; }
+
+@media (max-width: 600px) {
+  .vision-equation { flex-direction: column; }
+  .vision-equation span, .vision-equation strong { width: 100%; }
+}

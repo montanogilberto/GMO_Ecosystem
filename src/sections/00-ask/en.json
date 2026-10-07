@@ -1,0 +1,138 @@
+{
+  "eyebrow": "Ask the Factory",
+  "title": "Tell us what your business needs.",
+  "intro": "Type it or just talk — the mic writes down what you say. The Factory's Business Intake agent checks what already exists in GMO's app development ecosystem, then tells you what can be reused, what must be extended and what must be created. Keep chatting to add details or answer its questions.",
+  "placeholder": "e.g. I'm a lawyer starting my own firm. I need to register my clients and follow each client's legal process.",
+  "replyPlaceholder": "Reply or add more details…",
+  "inputLabel": "Describe your business need",
+  "websiteLabel": "Your website (optional) — the Factory reads it to understand your business",
+  "websitePlaceholder": "https://your-business.com",
+  "send": "Send",
+  "newChat": "↺ New conversation",
+  "examplesLabel": "Try:",
+  "examples": [
+    "I'm a lawyer: I need to register my clients and follow their legal process",
+    "I run a laundry and want to reward customers who come back",
+    "I sell purified water by route and need to track refills per client"
+  ],
+  "note": "Analysis only — nothing is created or changed in GMO.",
+  "data": {
+    "mic": {
+      "start": "Dictate with the microphone",
+      "stop": "Stop dictating",
+      "listening": "● Listening… speak and your words appear in the box. Tap 🎙️ to stop.",
+      "unsupported": "Voice dictation isn't available on this device or browser. Try Chrome or Safari, or use your keyboard's dictation key.",
+      "denied": "Microphone or speech recognition access was blocked. Allow it in your browser or device settings to dictate.",
+      "failed": "Dictation stopped unexpectedly. Please try again."
+    },
+    "empty": "Write or dictate your need first.",
+    "steps": [
+      "Understanding your need…",
+      "Checking what already exists in the app development ecosystem…",
+      "Reasoning about reuse, extension and new modules…"
+    ],
+    "errors": {
+      "network": "The Factory agent isn't reachable right now. Please try again later.",
+      "timeout": "The analysis took too long. Please try again.",
+      "rateLimited": "Too many analyses from your connection. Please try again later.",
+      "generic": "Something went wrong analyzing your request. Please try again."
+    },
+    "labels": {
+      "understood": "What we understood",
+      "asCompany": "Runs as a company on",
+      "extend": "Extend — GMO development",
+      "create": "New GMO capability",
+      "tenant": "Data isolation",
+      "risks": "Risks",
+      "questions": "Questions for you",
+      "prd": "Development for GMO (PRD Builder)",
+      "evidence": "Evidence checked",
+      "verified": "Verified in the repositories",
+      "assumptions": "Not verified",
+      "copy": "Copy",
+      "copied": "Copied",
+      "clarify": "The Factory needs one more detail",
+      "layers": {
+        "database": "Database",
+        "backend": "Backend",
+        "frontend": "Frontend",
+        "mobile": "Mobile app",
+        "web": "Web",
+        "agents": "AI agents",
+        "notifications": "Notifications",
+        "security": "Security"
+      },
+      "factory": "Factory",
+      "websiteRead": "Also read from your website:",
+      "websiteError": "Couldn't read your website:",
+      "workflow": "Your business workflow",
+      "basis": {
+        "verified": "you said it",
+        "inferred": "inferred, not confirmed",
+        "unknown": "unknown"
+      },
+      "capabilities": "Capabilities needed",
+      "decisions": {
+        "REUSE": "Reuse",
+        "CONFIGURE": "Configure",
+        "EXTEND": "Extend",
+        "INVESTIGATE": "Investigate",
+        "CREATE": "Create",
+        "NOT_APPLICABLE": "Not applicable"
+      },
+      "investigate": "Investigate before deciding",
+      "notApplicable": "Not applicable",
+      "existing": "Existing GMO capabilities",
+      "extension": "To add",
+      "known": "Known",
+      "unknowns": "Unknown",
+      "inspect": "To inspect",
+      "whyNotReuse": "Why not reuse",
+      "candidates": "GMO modules checked",
+      "evidenceLevels": {
+        "implementation-verified": "implementation verified",
+        "partially-verified": "partially verified",
+        "agent-endpoint-documented": "agent endpoint documented",
+        "catalog-only": "catalog only — not verified"
+      },
+      "readinessTitle": "Can this business operate in GMO today?",
+      "readiness": {
+        "READY": "Ready — join GMO and start",
+        "READY_WITH_CONFIGURATION": "Ready with configuration",
+        "READY_AFTER_EXTENSION": "Ready after GMO development",
+        "NEEDS_BUSINESS_CLARIFICATION": "Needs your answers first",
+        "NEEDS_REPOSITORY_INVESTIGATION": "Needs a repository check first",
+        "NEEDS_BOTH": "Needs your answers and a repository check"
+      },
+      "onboarding": "Your GMO onboarding",
+      "onboardingPlan": "Steps to start operating",
+      "today": "Today",
+      "configurationRequired": "Set up",
+      "configuration": "Configuration — no development",
+      "layerStatus": {
+        "AVAILABLE": "available",
+        "PARTIAL": "partial",
+        "MISSING": "missing",
+        "UNKNOWN": "not verified"
+      },
+      "mobileExperience": "In the GMO mobile app",
+      "webExperience": "In the GMO web platform",
+      "infrastructure": "Infrastructure you need",
+      "infrastructureItems": {
+        "newWebsite": "Your own website",
+        "newMobileApp": "Your own mobile app",
+        "newBackend": "Your own backend",
+        "newDatabase": "Your own database",
+        "newDeployment": "Your own deployment",
+        "newHosting": "Your own hosting"
+      },
+      "yes": "yes",
+      "no": "no",
+      "developmentTypes": {
+        "EXTEND_CAPABILITY": "Extend a GMO capability",
+        "NEW_CAPABILITY": "New GMO capability"
+      },
+      "recommendation": "Factory recommendation"
+    }
+  }
+}

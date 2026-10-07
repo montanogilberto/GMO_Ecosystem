@@ -1,0 +1,9 @@
+{
+  "eyebrow": "Roadmap",
+  "title": "From software factory to autonomous application intelligence",
+  "infrastructure": { "title": "Deterministic infrastructure", "text": "APIs, databases, tools, authentication, logging and validation." },
+  "reasoning": { "title": "Agentic reasoning", "text": "Agents understand context and reason about possible solutions." },
+  "coordination": { "title": "Agent coordination", "text": "Multiple specialized agents collaborate across the engineering lifecycle." },
+  "proactive": { "title": "Proactive intelligence", "text": "Agents detect situations before users ask." },
+  "selfImprovement": { "title": "Self-improvement", "text": "Incidents, evaluations and production feedback become learning signals." }
+}

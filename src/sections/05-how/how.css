@@ -1,0 +1,34 @@
+/* How Factory works: step-by-step timeline, agent pipeline, continuous evolution loop. */
+.timeline { display: grid; grid-template-columns: 260px 1fr; gap: 20px; }
+.timeline > * { min-width: 0; }
+.tl-steps { display: flex; flex-direction: column; gap: 6px; }
+.tl-steps button { display: flex; gap: 10px; text-align: left; background: var(--panel); border: 1px solid var(--line); color: var(--muted); padding: 11px 14px; border-radius: 10px; font: inherit; font-size: .92rem; cursor: pointer; transition: .2s; }
+.tl-steps button span { font-family: var(--mono); color: var(--factory); }
+.tl-steps button.active { color: var(--text); border-color: var(--factory); background: rgba(139,124,255,.12); }
+.tl-panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; min-height: 420px; }
+.tl-head { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+.tl-head h3 { margin: 0; flex: 1; font-size: 1.35rem; }
+.tl-num { font-family: var(--mono); font-size: 2rem; font-weight: 600; color: var(--factory); }
+.tl-text { color: var(--muted); }
+.diagram { margin: 0; padding: 18px; overflow-x: auto; font-family: var(--mono); font-size: .8rem; line-height: 1.45; color: #c9d4ff; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; animation: pop .35s ease both; }
+
+.pipeline { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.pipeline span { position: relative; margin-right: 10px; padding: 7px 12px; font-family: var(--mono); font-size: .8rem; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
+.pipeline span:not(:last-child)::after { content: "→"; position: absolute; right: -11px; color: var(--muted); }
+.pipeline .gate { border-color: var(--rewards); color: var(--rewards); }
+.pipeline .loop { border-color: var(--arcade); color: var(--arcade); }
+.pipeline .pr { border-color: var(--loans); color: var(--loans); }
+
+.factory-loop { margin-top: 28px; padding: 18px; border: 1px dashed var(--line); border-radius: var(--radius); }
+.factory-loop .next { border-color: var(--factory); color: var(--factory); }
+
+@media (max-width: 860px) {
+  .timeline { grid-template-columns: 1fr; }
+  .tl-steps { flex-direction: row; overflow-x: auto; padding-bottom: 4px; }
+  .tl-steps button { flex: 0 0 auto; }
+  .tl-panel { min-height: 0; }
+}
+@media (max-width: 600px) {
+  .tl-panel { padding: 20px; }
+  .diagram { font-size: .72rem; padding: 14px; }
+}

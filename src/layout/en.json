@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "GMO Ecosystem",
+    "description": "GMO Ecosystem — powered by GMO Factory, an autonomous agentic software factory that understands business needs, reasons about solutions, builds and evolves the GMO ecosystem for N companies."
+  },
+  "nav": {
+    "ask": "Ask",
+    "ecosystem": "Ecosystem",
+    "built": "What We Built",
+    "architecture": "Architecture",
+    "roadmap": "Roadmap",
+    "language": "Language",
+    "menu": "Open menu"
+  },
+  "footer": {
+    "notifications": "Notifications",
+    "agents": "AI Agents"
+  }
+}

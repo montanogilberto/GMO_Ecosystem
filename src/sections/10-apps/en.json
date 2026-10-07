@@ -1,0 +1,96 @@
+{
+  "eyebrow": "The Applications",
+  "title": "Three core applications. One ecosystem.",
+  "intro": "Rewards and Notifications connect the applications, while AI Agents provide intelligence across them.",
+  "pos": {
+    "subtitle": "The multi-company business foundation of GMO",
+    "capabilitiesTitle": "Capabilities",
+    "capabilities": [
+      "Clients",
+      "Client follow-up",
+      "Clients map",
+      "QR codes",
+      "KYC",
+      "Suppliers",
+      "Products",
+      "Sales",
+      "Expenses",
+      "Inventory",
+      "Manufacturing (cost of every service)",
+      "Orders",
+      "Tickets by SMS, WhatsApp & email",
+      "Rewards",
+      "Accounting",
+      "Dashboard",
+      "Employees",
+      "Users & roles",
+      "Alerts",
+      "Emails",
+      "Notifications",
+      "Arcade integration",
+      "SmartLoans access",
+      "Marketplace"
+    ],
+    "multiTitle": "Multi-company",
+    "company": "Company",
+    "multiNote": "One POS platform. N companies. Tenant-isolated data.",
+    "flowTitle": "Business flow",
+    "flow": [
+      "Customer",
+      "POS",
+      "Transaction",
+      "Accounting",
+      "Rewards",
+      "Notifications"
+    ],
+    "flowLast": "Other GMO apps",
+    "agentsTitle": "AI agents in POS",
+    "agents": [
+      "Support agents that solve problems immediately",
+      "Agent that helps register all your inventory",
+      "Agent that tells you when to buy more inventory",
+      "Agent that pays your services and bills"
+    ]
+  },
+  "loans": {
+    "subtitle": "Loans between people: people who need money borrow directly from people who want to lend it — SmartLoans is not a bank",
+    "flowTitle": "Flow",
+    "flow": [
+      "Borrower",
+      "KYC / Face & liveness verification",
+      "Loan Request",
+      "AI-assisted workflow",
+      "Lender",
+      "Contract / Pagaré"
+    ],
+    "flowLast": "Payment Infrastructure",
+    "architectureTitle": "Architecture",
+    "architecture": [
+      "Borrowers",
+      "Lenders",
+      "Juridical clients",
+      "KYC",
+      "Face / liveness",
+      "Contracts",
+      "Pagaré",
+      "Payment intents",
+      "Funding transactions",
+      "Transfer evidence",
+      "SPEI",
+      "STP",
+      "AMEX",
+      "CoDi",
+      "Debit",
+      "CLABE",
+      "AI orchestration"
+    ],
+    "callout": "<b>AI does not determine credit limits.</b> AI assists the workflow. Money movement stays approval-controlled."
+  },
+  "arcade": {
+    "subtitle": "Gaming & entertainment platform",
+    "text": "Arcade / Casino is a dedicated GMO application for gaming and entertainment. It operates alongside POS GMO and Rewards while maintaining its own application workflows and business rules.",
+    "creditsTitle": "Separate gaming credits",
+    "creditsText": "Arcade / Casino credits are a separate concept. They are not POS money and not Rewards points.",
+    "callout": "Games become another customer engagement channel, while Rewards connects that engagement back to the wider GMO ecosystem."
+  }
+}

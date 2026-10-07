@@ -1,0 +1,56 @@
+{
+  "eyebrow": "POS GMO · Built for N Companies",
+  "title1": "Different businesses.",
+  "title2": "Software that adapts to each one.",
+  "intro": "<b>POS GMO</b> is a multi-company business platform serving Company 1 through Company N. Each company can have its own products, services, workflows, operational rules and business needs. A laundry, grocery store, water business, retailer or manufacturer is a <b>company using POS GMO</b>, not a separate GMO application.",
+  "tabsLabel": "Example companies / verticals on POS GMO",
+  "isolated": "tenant-isolated",
+  "rule": {
+    "title": "Tenant isolation",
+    "text": "<code>companyId</code> comes from the <b>authenticated session context</b>. It never comes from an AI agent or LLM output.",
+    "login": "Login",
+    "session": "Session",
+    "storedProcedure": "Stored Procedure"
+  },
+  "factory": {
+    "title": "What this means for Factory",
+    "notThis": "Factory does not build <b>“Inventory for Laundry.”</b>",
+    "butThis": "It builds a <b>generic POS capability</b> that can adapt to Company A, B, C and N.",
+    "flow": ["Business requirement", "Agentic reasoning", "Generic capability"],
+    "flowLast": "Company A · B · C · … · N"
+  },
+  "data": {
+    "companies": [
+      {
+        "tab": "🧺 Laundry", "id": "001", "name": "Company A · Laundry",
+        "desc": "Wash, dry and ironing services with per-kilo pricing, tickets and customer promotions.",
+        "modules": [["Services", "wash · dry · iron"], ["Pricing", "per kg / per item"], ["Tickets", "pickup & delivery"], ["Clients", "own customers"], ["Rewards", "per-company"], ["WhatsApp", "ready for pickup"]]
+      },
+      {
+        "tab": "🛒 Grocery", "id": "002", "name": "Company B · Grocery",
+        "desc": "Product catalog, suppliers, daily sales and expense control.",
+        "modules": [["Products", "SKU catalog"], ["Suppliers", "purchases"], ["Income", "daily sales"], ["Expenses", "operations"], ["Rewards", "points per ticket"], ["Reports", "margins"]]
+      },
+      {
+        "tab": "💧 Purified Water", "id": "003", "name": "Company C · Purified Water",
+        "desc": "Refills, route clients and recurring customers.",
+        "modules": [["Products", "garrafones"], ["Clients", "routes"], ["Payments", "cash & transfer"], ["Notifications", "refill reminders"], ["Rewards", "loyalty refills"], ["Accounting", "balance"]]
+      },
+      {
+        "tab": "🛍️ Retail", "id": "004", "name": "Company D · Retail",
+        "desc": "Store operations with invoices, promotions and accounting.",
+        "modules": [["Products", "inventory"], ["Invoices", "CFDI"], ["Promotions", "campaigns"], ["Accounting", "income statement"], ["Rewards", "member benefits"], ["Push", "offers"]]
+      },
+      {
+        "tab": "🏭 Manufacturing", "id": "005", "name": "Company E · Manufacturing",
+        "desc": "Production workflows integrated into the same POS business platform.",
+        "modules": [["Manufacturing", "production orders"], ["Suppliers", "raw materials"], ["Products", "finished goods"], ["Expenses", "costs"], ["Accounting", "balance"], ["Reports", "output"]]
+      },
+      {
+        "tab": "➕ Company N", "id": "N", "name": "Company N · Any business",
+        "desc": "Users · Roles · Clients · Products · Transactions · Accounting · Configuration · Rewards · Notifications, with no new application required.",
+        "modules": [["POS configuration", "per company"], ["Users / Roles", "own team"], ["Clients", "own data"], ["Income / Expenses", "own ledger"], ["Rewards", "own program"], ["Notifications", "own channels"]]
+      }
+    ]
+  }
+}

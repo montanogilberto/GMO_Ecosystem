@@ -1,0 +1,26 @@
+{
+  "title1": "Una Factory.",
+  "title2": "Un Ecosistema.",
+  "title3": "N Empresas.",
+  "tagline": "Una fábrica de software agéntica y autónoma, creada para entender, razonar y evolucionar el software de negocio.",
+  "lead": "GMO Factory no es solo un generador de código. Es un <b>sistema agéntico de ingeniería de software</b> donde agentes de IA especializados entienden el contexto del negocio, razonan sobre posibles soluciones, se coordinan con otros agentes, usan herramientas de ingeniería gobernadas y construyen software que se adapta a la forma en que opera cada empresa.",
+  "highlight": {
+    "needTitle": "La empresa define lo que necesita.",
+    "needText": "La Factory razona cómo debe evolucionar el software para apoyar a ese negocio.",
+    "adaptTitle": "El software se adapta al negocio.",
+    "adaptText": "La empresa no tiene que adaptar su operación a un proceso de software rígido."
+  },
+  "flow": ["Necesidad de negocio", "Entender", "Razonar", "Planear", "Construir", "Validar"],
+  "flowLast": "Evolucionar",
+  "cta": {
+    "explore": "Explorar el ecosistema",
+    "thinks": "Cómo piensa Factory"
+  },
+  "stats": {
+    "repos": "repositorios coordinados",
+    "apps": "aplicaciones principales",
+    "capabilities": "capacidades de negocio transversales",
+    "ai": "capa de inteligencia con IA",
+    "companies": "empresas en POS GMO"
+  }
+}

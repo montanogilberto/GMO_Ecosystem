@@ -1,0 +1,27 @@
+{
+  "eyebrow": "Arquitectura",
+  "title": "Cuatro repositorios. Un ecosistema de ingeniería.",
+  "frontend": { "text": "Experiencia de usuario e interfaces de las aplicaciones." },
+  "backend": {
+    "text": "API de negocio, autenticación, reglas de negocio y acceso a la base de datos.",
+    "routes": "Rutas",
+    "services": "Servicios",
+    "storedProcedures": "Procedimientos almacenados"
+  },
+  "database": {
+    "title": "Base de datos SQL",
+    "tech": "Tablas · SPs · Datos",
+    "text": "Datos multiempresa delimitados por <code>companyId</code>."
+  },
+  "governedTools": "herramientas gobernadas",
+  "agents": {
+    "title": "Agentes de IA de GMO",
+    "tech": "Capa de inteligencia agéntica",
+    "text": "Agentes especializados, razonamiento, orquestación, RAG, herramientas gobernadas y soporte a las aplicaciones."
+  },
+  "factory": {
+    "tech": "Sistema de ingeniería autónomo",
+    "flow": ["Entender", "Razonar", "Planear", "Implementar", "Revisar"],
+    "flowLast": "Evolucionar"
+  }
+}

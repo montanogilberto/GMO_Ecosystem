@@ -1,0 +1,68 @@
+{
+  "eyebrow": "Foundations",
+  "title": "What We Built",
+  "intro": "The foundation for an agentic software factory already exists across applications, AI infrastructure and engineering automation.",
+  "agents": {
+    "title": "Agentic AI Infrastructure",
+    "items": [
+      "Model-agnostic agent framework",
+      "Multi-model reasoning: the right LLM for each task",
+      "Specialized domain agents",
+      "Agent orchestration",
+      "Tool-based execution",
+      "Human approval workflows",
+      "RAG and evidence retrieval",
+      "Hybrid retrieval: embeddings + RRF",
+      "MCP / graph-oriented architecture",
+      "Evaluation framework"
+    ]
+  },
+  "understanding": {
+    "title": "Software Understanding",
+    "intro": "Factory builds an understanding of the ecosystem instead of treating repositories as isolated files.",
+    "relations": [
+      {
+        "from": "Stored Procedure",
+        "to": "Table"
+      },
+      {
+        "from": "Backend Route",
+        "to": "Stored Procedure"
+      },
+      {
+        "from": "Frontend API",
+        "to": "Backend Route"
+      },
+      {
+        "from": "Feature",
+        "to": "Many components"
+      },
+      {
+        "from": "Business Requirement",
+        "to": "Cross-system impact"
+      }
+    ]
+  },
+  "engineering": {
+    "title": "Autonomous Engineering",
+    "items": [
+      "Multi-stage agent pipeline with Decision Gate",
+      "Engineering Work Plans before implementation",
+      "Coordinated changes across 4 repositories",
+      "Review / Fix / Re-test loop",
+      "Governed engineering tools",
+      "Controlled Pull Request delivery",
+      "Factory pipeline under active evolution"
+    ]
+  },
+  "business": {
+    "title": "Business Applications",
+    "items": [
+      "POS GMO: clients, follow-up, KYC, QR, maps, sales, expenses, inventory, manufacturing costs, orders, tickets, accounting, employees, users, alerts and AI agents",
+      "SmartLoans: loans between people",
+      "Arcade / Casino: gaming and entertainment",
+      "Rewards: cross-app loyalty",
+      "Notifications: Push, WhatsApp and SMS"
+    ]
+  }
+}

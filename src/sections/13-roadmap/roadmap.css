@@ -1,0 +1,16 @@
+/* Roadmap: five stages; .done = reached, .now = current stage. */
+.road { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.road div { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 18px; }
+.road span { display: inline-grid; place-items: center; width: 32px; height: 32px; margin-bottom: 10px; border-radius: 50%; background: var(--panel-2); border: 1px solid var(--line); font-family: var(--mono); }
+.road b { display: block; margin-bottom: 4px; }
+.road p { color: var(--muted); font-size: .88rem; margin: 0; }
+.road .done span { background: var(--loans); color: #04140b; border-color: var(--loans); }
+.road .now { border-color: var(--factory); box-shadow: 0 0 0 1px var(--factory); }
+.road .now span { background: var(--factory); color: #fff; border-color: var(--factory); }
+
+@media (max-width: 1000px) {
+  .road { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .road { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "GMO Ecosystem",
+  "integrations": { "capacitor": {} },
+  "type": "react-vite"
+}

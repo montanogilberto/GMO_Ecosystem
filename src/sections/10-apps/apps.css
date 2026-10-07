@@ -1,0 +1,36 @@
+/* Applications: one card each for POS GMO, SmartLoans and Arcade / Casino. */
+.app { --c: var(--pos); position: relative; overflow: hidden; margin-bottom: 22px; padding: 28px; background: var(--panel); border: 1px solid var(--line); border-radius: 18px; }
+.app::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; background: var(--c); }
+.app.pos { --c: var(--pos); }
+.app.loans { --c: var(--loans); }
+.app.arcade { --c: var(--arcade); }
+.app-h { display: flex; gap: 16px; align-items: center; margin-bottom: 20px; }
+.app-h .ico { display: grid; place-items: center; width: 64px; height: 64px; flex: 0 0 auto; font-size: 2.2rem; border-radius: 16px; background: color-mix(in srgb, var(--c) 16%, transparent); }
+.app-h h3 { font-size: 1.6rem; margin: 0; color: var(--c); }
+.app-h p { margin: 0; color: var(--muted); }
+.app-body { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; }
+.app-body > * { min-width: 0; }
+
+.app .checks { margin-bottom: 18px; }
+.app .checks li::before { content: none; }
+.app .checks li { padding-left: 0; }
+.company-cloud { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.company-cloud span { font-family: var(--mono); font-size: .76rem; padding: 6px 10px; border-radius: 8px; background: rgba(34,199,184,.12); border: 1px solid rgba(34,199,184,.35); color: var(--pos); }
+
+.games { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; font-size: 2rem; }
+.games span { display: grid; place-items: center; width: 60px; height: 60px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 14px; animation: float 3s ease-in-out infinite; }
+.games span:nth-child(2) { animation-delay: .3s; }
+.games span:nth-child(3) { animation-delay: .6s; }
+.games span:nth-child(4) { animation-delay: .9s; }
+.games span:nth-child(5) { animation-delay: 1.2s; }
+@keyframes float { 50% { transform: translateY(-6px); } }
+
+@media (max-width: 860px) {
+  .app-body { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .app { padding: 20px; }
+  .app-h .ico { width: 52px; height: 52px; font-size: 1.8rem; }
+  .app-h h3 { font-size: 1.35rem; }
+  .games span { width: 48px; height: 48px; font-size: 1.6rem; border-radius: 12px; }
+}

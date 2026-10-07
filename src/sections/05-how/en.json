@@ -1,0 +1,137 @@
+{
+  "eyebrow": "How Factory Works",
+  "title": "From business need to evolved software",
+  "intro": "A Pull Request is only one controlled delivery mechanism. The real Factory process is the reasoning and coordination that happens before the code is changed. Click through each step, or press play.",
+  "pipeline": {
+    "title": "The Factory pipeline",
+    "intro": "This is not one coding agent. It is a coordinated organization of specialized engineering agents.",
+    "before": ["Host Architect", "PRD Parser", "PRD Enricher", "Schema Analyst", "Architect"],
+    "gate": "Decision Gate",
+    "after": ["Database", "Backend", "Design Consistency", "Fixer", "Frontend"],
+    "loop": "Review / Fix Loop"
+  },
+  "loop": {
+    "steps": ["Business Need", "Agentic Reasoning", "Engineering Plan", "Implementation", "Validation"],
+    "learning": "Production Learning",
+    "next": "Next Evolution"
+  },
+  "data": {
+    "play": "▶ Play",
+    "pause": "❚❚ Pause",
+    "steps": [
+      {
+        "title": "Business Need",
+        "text": "A company or product owner describes what the business needs, in plain language.",
+        "diagram": [
+          "  “Add Inventory management to GMO.”",
+          "",
+          "   └─► Factory receives the business need",
+          "       (no code is written yet)"
+        ]
+      },
+      {
+        "title": "Understand",
+        "text": "Factory investigates the business and the existing ecosystem across every layer before proposing anything.",
+        "diagram": [
+          "  Frontend ─► API ─► Backend",
+          "           ─► Stored Procedure ─► Database",
+          "",
+          "  and also:",
+          "",
+          "  Agents ─► Tools ─► RAG ─► Workflows",
+          "",
+          "  + Tenant model (companyId from session)"
+        ]
+      },
+      {
+        "title": "Ecosystem Graph",
+        "text": "Factory builds the relationships between components, so it can reason about the impact of a change.",
+        "diagram": [
+          "  Inventory Page                  [missing]",
+          "        │",
+          "  inventoryApi.ts                 [missing]",
+          "        │",
+          "  GET /inventory                  [missing]",
+          "        │",
+          "  routes_/inventory.py            [missing]",
+          "        │",
+          "  sp_inventory_adjust             [exists]",
+          "        │",
+          "  inventoryStock                  [exists]",
+          "  inventoryMovements              [exists]"
+        ]
+      },
+      {
+        "title": "Multi-Agent Reasoning",
+        "text": "Specialized agents analyze the need from their own domain, and a Decision Gate consolidates their reasoning.",
+        "diagram": [
+          "          Business Need",
+          "                 │",
+          "           ┌───────────┐",
+          "           │ Architect │",
+          "           └─────┬─────┘",
+          "     ┌───────────┼───────────┐",
+          "  Database    Backend    Frontend",
+          "   Agent       Agent       Agent",
+          "     └───────────┼───────────┘",
+          "           Decision Gate",
+          "                 │",
+          "          Engineering Plan"
+        ]
+      },
+      {
+        "title": "Engineering Plan",
+        "text": "Instead of changing code immediately, Factory produces an Agentic Engineering Work Plan that can be reviewed and approved.",
+        "diagram": [
+          "  AGENTIC ENGINEERING WORK PLAN",
+          "  ├─ business context",
+          "  ├─ repositories",
+          "  ├─ files",
+          "  ├─ database changes",
+          "  ├─ API changes",
+          "  ├─ frontend changes",
+          "  ├─ agent changes",
+          "  ├─ dependencies",
+          "  ├─ validation",
+          "  ├─ risks",
+          "  └─ acceptance criteria"
+        ]
+      },
+      {
+        "title": "Controlled Execution",
+        "text": "Governed tools execute the approved plan across the repositories, in dependency order.",
+        "diagram": [
+          "  PLAN",
+          "   ├── Database",
+          "   ├── Backend",
+          "   ├── Frontend",
+          "   └── AI Agents"
+        ]
+      },
+      {
+        "title": "Validate & Review",
+        "text": "Changes are validated, reviewed, fixed and re-tested until they meet the acceptance criteria.",
+        "diagram": [
+          "  Validation ─► Review",
+          "      ▲            │",
+          "      │            ▼",
+          "  Re-test  ◄──── Fix"
+        ]
+      },
+      {
+        "title": "Deliver & Evolve",
+        "text": "The change is delivered as a controlled Pull Request that a human merges. Production learning then feeds the next evolution.",
+        "diagram": [
+          "  ✓ Database migration",
+          "  ✓ Backend routes + services",
+          "  ✓ Frontend pages + API client",
+          "  ✓ Agent updates",
+          "  ✓ Validation passed",
+          "",
+          "  ──► Pull Request ready for review",
+          "  ──► Production learning ↺ next evolution"
+        ]
+      }
+    ]
+  }
+}

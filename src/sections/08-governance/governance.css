@@ -1,0 +1,23 @@
+/* Governance: six rules and the autonomy ladder (READ → PROPOSE → EXECUTE WITH APPROVAL → AUTO). */
+.gov-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.gov { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--factory); border-radius: var(--radius); padding: 20px; }
+.gov p { margin: .4em 0 0; color: var(--muted); font-size: .92rem; }
+
+.ladder { display: grid; grid-template-columns: repeat(4, 1fr); }
+.ladder div { padding: 18px 16px; background: var(--panel); border: 1px solid var(--line); }
+.ladder div:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+.ladder div:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+.ladder div:nth-child(1) { border-top: 3px solid var(--notif); }
+.ladder div:nth-child(2) { border-top: 3px solid var(--factory); }
+.ladder div:nth-child(3) { border-top: 3px solid var(--rewards); }
+.ladder div:nth-child(4) { border-top: 3px solid var(--loans); }
+.ladder b { display: block; font-family: var(--mono); font-size: .9rem; }
+.ladder small { color: var(--muted); }
+
+@media (max-width: 860px) {
+  .gov-grid, .ladder { grid-template-columns: 1fr 1fr; }
+  .ladder div { border-radius: 0 !important; }
+}
+@media (max-width: 600px) {
+  .gov-grid, .ladder { grid-template-columns: 1fr; }
+}

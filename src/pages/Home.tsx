@@ -6,7 +6,7 @@ import Footer from "../layout/Footer";
 import Header from "../layout/Header";
 import layoutEn from "../layout/en.json";
 import layoutEs from "../layout/es.json";
-import { LangContext, savedLang, type Lang } from "../lib/i18n";
+import { LangContext, langFromParam, langPath, savedLang, type Lang } from "../lib/i18n";
 import { useScroll } from "../lib/scroll";
 
 import Ask from "../sections/00-ask/Ask";
@@ -28,7 +28,7 @@ import Contact from "../sections/15-contact/Contact";
 
 /** The whole site is one Ionic page; each section lives in src/sections/<NN-name>/. */
 export default function Home({ match, history, location }: RouteComponentProps<{ lang?: string }>) {
-  const lang: Lang = match.params.lang === "es" ? "es" : "en";
+  const lang: Lang = langFromParam(match.params.lang);
   const content = useRef<HTMLIonContentElement>(null);
   const { setActive } = useScroll();
 
@@ -40,12 +40,12 @@ export default function Home({ match, history, location }: RouteComponentProps<{
     document.querySelector('meta[name="description"]')?.setAttribute("content", meta.description);
   }, [lang]);
 
-  // First visit from a Spanish-language device (or an old ?lang=es link): show Spanish.
+  // Spanish is the default. Open the other language only when asked for (?lang=en / ?lang=es)
+  // or when the visitor picked it before with the EN / ES switch.
   useEffect(() => {
     const asked = new URLSearchParams(location.search).get("lang");
-    if (lang === "en" && (asked === "es" || (!asked && !savedLang() && /^es\b/i.test(navigator.language || "")))) {
-      history.replace("/es");
-    }
+    const wanted = asked === "en" || asked === "es" ? asked : savedLang();
+    if (wanted && wanted !== lang) history.replace(langPath(wanted));
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Fade sections in as they scroll into view, and highlight the menu link of the section on screen.

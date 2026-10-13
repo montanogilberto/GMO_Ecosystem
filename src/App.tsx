@@ -26,13 +26,16 @@ export default function App() {
       <ScrollProvider>
         <IonReactRouter>
           <NavMenu />
-          {/* One page for both languages ("/" = English, "/es" = Spanish): a plain <Route>
+          {/* One page for both languages ("/" = Spanish, the default; "/en" = English): a plain <Route>
               keeps a single page instance, so switching language only swaps the text and
               keeps your place. (IonRouterOutlet would stack a second copy of the page.) */}
           <Switch>
             {/* GMO team only: leads and follow-up (protected by the server's admin key). */}
-            <Route exact path="/:lang(es)?/admin" component={Admin} />
-            <Route exact path="/:lang(es)?" component={Home} />
+            <Route exact path="/:lang(en)?/admin" component={Admin} />
+            <Route exact path="/:lang(en)?" component={Home} />
+            {/* Spanish used to live at /es: keep old links working. */}
+            <Redirect exact from="/es/admin" to="/admin" />
+            <Redirect exact from="/es" to="/" />
             <Redirect to="/" />
           </Switch>
         </IonReactRouter>

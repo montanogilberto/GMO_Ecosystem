@@ -5,15 +5,18 @@ import { useLocation } from "react-router-dom";
 
 export type Lang = "en" | "es";
 
-export const LangContext = createContext<Lang>("en");
+export const LangContext = createContext<Lang>("es");
 
 /** Language of the page being rendered. */
 export const useLang = (): Lang => useContext(LangContext);
 
 /** Language from the URL — for components outside the page (the side menu). */
-export const useUrlLang = (): Lang => (useLocation().pathname.startsWith("/es") ? "es" : "en");
+export const useUrlLang = (): Lang => (/^\/en(\/|$)/.test(useLocation().pathname) ? "en" : "es");
 
-export const langPath = (lang: Lang): string => (lang === "es" ? "/es" : "/");
+/** Spanish is the default: "/" is Spanish, "/en" is English. */
+export const langFromParam = (param?: string): Lang => (param === "en" ? "en" : "es");
+
+export const langPath = (lang: Lang): string => (lang === "en" ? "/en" : "/");
 
 /** Picks this section's text for the current language. */
 export function useText<T>(en: T, es: T): T {

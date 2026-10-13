@@ -1,8 +1,10 @@
 # GMO Ecosystem
 
+**Live:** https://www.gmoecosystem.com
+
 **GMO Ecosystem** is an Ionic React app (web, iOS and Android) that presents the GMO ecosystem and **GMO Factory**, the autonomous agentic software factory behind it: POS GMO (multi-company), SmartLoans, Arcade / Casino, Rewards, Notifications and AI Agents.
 
-- English at `/`, Spanish at `/es`.
+- Spanish by default at `/`, English at `/en` (old `/es` links redirect to `/`). A visitor's EN / ES choice is remembered in their browser.
 - Works on phones, tablets and desktops.
 - Opens with **"Ask the Factory"**: a chat where a business owner types or dictates what they need, and the Factory's Business Intake agent answers with what GMO can reuse, extend or create.
 
@@ -34,7 +36,7 @@ cp .env.example .env
 npm start
 ```
 
-Open http://localhost:8080 (English) or http://localhost:8080/es (Spanish).
+Open http://localhost:8080 (Spanish) or http://localhost:8080/en (English).
 
 To try "Ask the Factory" locally, also start the Business Intake API (see [Ask the Factory](#ask-the-factory)).
 
@@ -64,7 +66,7 @@ Each section of the page has its own folder with its React component, styles, an
 
 ```
 src/
-  main.tsx, App.tsx        app entry and routes ("/" English, "/es" Spanish)
+  main.tsx, App.tsx        app entry and routes ("/" Spanish, "/en" English)
   pages/Home.tsx           the single page that stacks all sections
   lib/                     i18n.tsx (language), scroll.tsx (in-page links), Html.tsx
   theme/variables.css      Ionic colors
@@ -152,9 +154,22 @@ The workflow [`.github/workflows/azure-static-web-apps.yml`](.github/workflows/a
    | Variable | `VITE_INTAKE_API_URL` | public address of the Business Intake API |
 
 4. **Push to `main`.** The deploy shows up under the **Actions** tab, and the site URL is on the Static Web App's Overview page.
-5. **Allow the site in the API:** add the site's URL to the API's `INTAKE_ALLOWED_ORIGINS`.
+5. **Allow the site in the API:** add `https://www.gmoecosystem.com` (and the Azure address, for previews) to the API's `INTAKE_ALLOWED_ORIGINS`.
 
-`public/staticwebapp.config.json` is copied into `dist/` and makes `/es` (and any route) load the app.
+`public/staticwebapp.config.json` is copied into `dist/` and makes `/en` (and any route) load the app.
+
+### Production site and domain
+
+| | |
+|---|---|
+| Azure resource | Static Web App `GMOEcosystem` (resource group `GMOEcosystem_group`, West US 2, Free plan) |
+| Main address | https://www.gmoecosystem.com |
+| Azure address | https://kind-coast-035f5401e.5.azurestaticapps.net |
+| Bare domain | `gmoecosystem.com` forwards (301) to `https://www.gmoecosystem.com` |
+
+The domain is registered at GoDaddy, which also hosts its DNS:
+- **`www`:** a CNAME record pointing to `kind-coast-035f5401e.5.azurestaticapps.net`. It's attached in Azure with `az staticwebapp hostname set --name GMOEcosystem --hostname www.gmoecosystem.com`, and Azure issues and renews its SSL certificate.
+- **Bare domain:** GoDaddy's DNS has no ALIAS records, so `gmoecosystem.com` uses GoDaddy domain forwarding (permanent, no masking) to the `www` address instead of pointing at Azure directly.
 
 ### Deploy from your computer (optional)
 

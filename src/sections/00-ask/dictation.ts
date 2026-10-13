@@ -96,16 +96,8 @@ function startWeb(lang: string, events: DictationEvents): Dictation | null {
   rec.interimResults = true;
 
   let cancelled = false;
-  let finished = "";
   rec.onresult = (e) => {
-    if (cancelled) return;
-    let interim = "";
-    for (let i = e.resultIndex; i < e.results.length; i++) {
-      const piece = e.results[i][0].transcript;
-      if (e.results[i].isFinal) finished += piece;
-      else interim += piece;
-    }
-    events.onText(finished + interim);
+    if (!cancelled) events.onText(joinResults(e.results));
   };
   rec.onerror = (e) => {
     if (e.error === "not-allowed" || e.error === "service-not-allowed") events.onError("denied");
@@ -122,6 +114,24 @@ function startWeb(lang: string, events: DictationEvents): Dictation | null {
     stop: () => rec.stop(),
     cancel: () => { cancelled = true; rec.abort(); },
   };
+}
+
+/**
+ * The whole dictation so far, rebuilt from every result on each update (never
+ * added up across updates: Chrome can deliver the same phrase again). Chrome on
+ * Android also sends cumulative phrases ("hola", "hola cómo", "hola cómo estás"),
+ * so a phrase that already contains the text before it replaces that text.
+ */
+export function joinResults(results: ArrayLike<ArrayLike<{ transcript: string }>>): string {
+  const words = (s: string) => s.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim();
+  let text = "";
+  for (let i = 0; i < results.length; i++) {
+    const piece = results[i][0].transcript.trim();
+    if (!piece) continue;
+    if (text && words(piece).startsWith(words(text))) text = piece;
+    else text = text ? `${text} ${piece}` : piece;
+  }
+  return text;
 }
 
 function fail(events: DictationEvents, kind: "unsupported" | "denied" | "failed"): null {

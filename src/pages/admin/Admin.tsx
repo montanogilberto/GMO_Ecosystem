@@ -3,7 +3,7 @@
 import { IonContent, IonPage } from "@ionic/react";
 import { useCallback, useEffect, useState } from "react";
 import type { RouteComponentProps } from "react-router-dom";
-import { LangContext, type Lang } from "../../lib/i18n";
+import { LangContext, langFromParam, type Lang } from "../../lib/i18n";
 import { api, ApiError } from "../../lib/site";
 import en from "./en.json";
 import es from "./es.json";
@@ -76,7 +76,7 @@ function LeadRow({ lead, t, onSave, fmt }: { lead: Lead; t: typeof en; onSave: (
 }
 
 export default function Admin({ match }: RouteComponentProps<{ lang?: string }>) {
-  const lang: Lang = match.params.lang === "es" ? "es" : "en";
+  const lang: Lang = langFromParam(match.params.lang);
   const t = lang === "es" ? es : en;
   const fmt = (n: number) => n.toLocaleString(lang === "es" ? "es-MX" : "en-US");
 

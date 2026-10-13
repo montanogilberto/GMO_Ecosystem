@@ -44,7 +44,7 @@ Ionic React 8 · React 18 · TypeScript · Vite 6 · Capacitor 7 · app id `com.
 
 ```
 src/
-  main.tsx, App.tsx          entry + routes: "/" English, "/es" Spanish (one page instance)
+  main.tsx, App.tsx          entry + routes: "/" Spanish (default), "/en" English (one page instance); "/es" redirects to "/"
   pages/Home.tsx             stacks all sections; fade-in and active-menu tracking
   lib/
     i18n.tsx                 useText(en, es), language from the route, saved choice
@@ -68,7 +68,7 @@ src/
     12-technology/   stack
     13-roadmap/      five stages
     14-vision/       closing statement
-public/staticwebapp.config.json   Azure Static Web Apps (SPA fallback for /es, security headers)
+public/staticwebapp.config.json   Azure Static Web Apps (SPA fallback for /en, /admin…, security headers)
 scripts/check-i18n.mjs            fails the build if en.json and es.json differ
 ```
 
@@ -76,8 +76,8 @@ Each section folder holds `Component.tsx`, `component.css`, `en.json` and `es.js
 
 ### Languages
 
-- English at `/`, Spanish at `/es`. Switching keeps your scroll position, and the choice is remembered.
-- A first visit from a Spanish-language device opens `/es`. Old `?lang=es` links still work.
+- Spanish (default) at `/`, English at `/en`. Switching keeps your scroll position, and the choice is remembered.
+- Everyone starts in Spanish unless they chose English before or follow a `?lang=en` link. Old `/es` links redirect to `/`.
 - `npm run build` runs `check-i18n` first, which fails the build if any text is missing in one language.
 
 ### Responsive
@@ -273,7 +273,7 @@ These features are the website's money-making funnel: **visit → free AI analys
 | **AI token bar** | Under the Ask chat | Every analysis reports its real tokens (input + output + thinking, ~9,000 each). Free allowance 40,000 per visitor (~4 analyses); registering raises it to 400,000. Repeated questions (cache) are free. When it runs out, the chat asks the visitor to register (HTTP 402). |
 | **Mini registration** | Appears after the first analysis (or when tokens run out) | Name, WhatsApp/phone, email, business, and consent. Saved as a **lead** (`ask_factory`) together with the analysis (business type, readiness, summary). |
 | **Contact module** | New section "Contacto" (+ menu link) | Name, contact, business, message, consent. Saved as a lead (`contact_form`). |
-| **Follow-up** | `/admin` or `/es/admin` (GMO team only) | Shows visits, tokens, leads and visitor → lead conversion, plus a 30-day visit chart. Each lead has WhatsApp / call / email links and its analysis, and can be set to new → contacted → qualified → won / lost, with notes. CSV export. |
+| **Follow-up** | `/admin` (Spanish) or `/en/admin` (GMO team only) | Shows visits, tokens, leads and visitor → lead conversion, plus a 30-day visit chart. Each lead has WhatsApp / call / email links and its analysis, and can be set to new → contacted → qualified → won / lost, with notes. CSV export. |
 | **Log in** | Header, ☰ menu, Contact | Goes to the existing GMO web platform: `https://mango-smoke-0323ed91e.3.azurestaticapps.net/login` (`VITE_GMO_LOGIN_URL`). |
 
 **Storage and protections:**
@@ -300,7 +300,7 @@ These features are the website's money-making funnel: **visit → free AI analys
 SITE_ADMIN_KEY=choose-a-password .venv/bin/uvicorn business_intake_api:app --port 8090
 ```
 
-The follow-up page is http://localhost:8080/es/admin; it asks for that key.
+The follow-up page is http://localhost:8080/admin; it asks for that key.
 
 **App** (in `GMO_Ecosystem`, Node 20+):
 
@@ -309,7 +309,7 @@ npm install
 npm start
 ```
 
-Open http://localhost:8080 (English) or http://localhost:8080/es (Spanish).
+Open http://localhost:8080 (Spanish) or http://localhost:8080/en (English).
 
 **Tests:**
 

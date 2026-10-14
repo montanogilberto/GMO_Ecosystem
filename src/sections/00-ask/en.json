@@ -37,7 +37,8 @@
       "rateLimited": "Too many analyses from your connection. Please try again later.",
       "generic": "Something went wrong analyzing your request. Please try again.",
       "tokenLimit": "You've used your free AI tokens. Register below (it's free) to keep going.",
-      "tokenLimitRegistered": "You've used your AI tokens. The GMO team will contact you to continue."
+      "tokenLimitRegistered": "You've used your AI tokens. The GMO team will contact you to continue.",
+      "notConfigured": "The Factory agent isn't connected on this site yet. Please try again soon."
     },
     "labels": {
       "understood": "What we understood",

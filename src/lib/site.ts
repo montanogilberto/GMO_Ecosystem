@@ -2,14 +2,23 @@
 // the Business Intake agent plus the commercial core — visit counter, AI token
 // allowance, leads. The address comes from VITE_INTAKE_API_URL (see .env.example).
 
-/** Without VITE_INTAKE_API_URL (local development), the API is looked for on the same machine the page
- *  was opened from, port 8090 — 127.0.0.1 instead of "localhost" so IPv6/IPv4 differences can't break it. */
+/** Without VITE_INTAKE_API_URL, only local development has a fallback: the API on this machine or the
+ *  local network, port 8090 (127.0.0.1 instead of "localhost" so IPv6/IPv4 differences can't break it).
+ *  A public site (e.g. https://www.gmoecosystem.com) gets NO fallback — guessing http://<site>:8090 there
+ *  is blocked by the browser as mixed content — so the API features turn off until it is configured. */
 function defaultApiUrl(): string {
-  const host = typeof window === "undefined" || ["localhost", ""].includes(window.location.hostname) ? "127.0.0.1" : window.location.hostname;
-  return `http://${host}:8090`;
+  if (typeof window === "undefined") return "";
+  const host = window.location.hostname;
+  const local = host === "" || host === "localhost" || host === "127.0.0.1"
+    || /^(10\.|192\.168\.|172\.(1[6-9]|2\d|3[01])\.)/.test(host);
+  if (!local) return "";
+  return `http://${host === "" || host === "localhost" ? "127.0.0.1" : host}:8090`;
 }
 
 export const API_URL = (import.meta.env.VITE_INTAKE_API_URL || defaultApiUrl()).replace(/\/$/, "");
+
+/** False on a deployed site built without VITE_INTAKE_API_URL: Ask, the visit counter and the token bar stay off. */
+export const API_CONFIGURED = API_URL !== "";
 
 /** Login of the existing GMO web operations platform, where companies operate day to day. */
 export const LOGIN_URL = import.meta.env.VITE_GMO_LOGIN_URL || "https://mango-smoke-0323ed91e.3.azurestaticapps.net/login";
@@ -39,6 +48,7 @@ export class ApiError extends Error {
 
 /** JSON request to the platform API; throws ApiError for non-2xx answers. */
 export async function api<T>(path: string, init: { method?: string; body?: unknown; headers?: Record<string, string>; signal?: AbortSignal } = {}): Promise<T> {
+  if (!API_CONFIGURED) throw new ApiError(0, "API not configured (VITE_INTAKE_API_URL)");
   const response = await fetch(`${API_URL}${path}`, {
     method: init.method ?? (init.body === undefined ? "GET" : "POST"),
     headers: { ...(init.body === undefined ? {} : { "Content-Type": "application/json" }), ...init.headers },

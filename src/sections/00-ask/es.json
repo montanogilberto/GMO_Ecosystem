@@ -37,7 +37,8 @@
       "rateLimited": "Demasiados análisis desde tu conexión. Intenta más tarde.",
       "generic": "Algo salió mal al analizar tu solicitud. Intenta de nuevo.",
       "tokenLimit": "Usaste tus tokens de IA gratis. Regístrate abajo (es gratis) para continuar.",
-      "tokenLimitRegistered": "Usaste tus tokens de IA. El equipo de GMO te contactará para continuar."
+      "tokenLimitRegistered": "Usaste tus tokens de IA. El equipo de GMO te contactará para continuar.",
+      "notConfigured": "El agente de la Factory aún no está conectado en este sitio. Intenta de nuevo pronto."
     },
     "labels": {
       "understood": "Lo que entendimos",

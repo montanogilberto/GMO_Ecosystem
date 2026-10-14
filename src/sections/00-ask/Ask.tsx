@@ -8,7 +8,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import LeadForm, { type AnalysisSummary } from "../../components/lead-form/LeadForm";
 import TokenBar from "../../components/token-bar/TokenBar";
 import { useLang, useText } from "../../lib/i18n";
-import { api, API_URL, visitorId, type Allowance } from "../../lib/site";
+import { api, API_CONFIGURED, API_URL, visitorId, type Allowance } from "../../lib/site";
 import en from "./en.json";
 import es from "./es.json";
 import { startDictation, type Dictation } from "./dictation";
@@ -132,6 +132,10 @@ export default function Ask() {
 
     const answer = (m: Message) => setMessages((all) => [...all, m]);
     const fail = (msg: string) => answer({ role: "error", text: msg });
+    if (!API_CONFIGURED) {
+      setLoading(false);
+      return fail(d.errors.notConfigured);
+    }
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
     try {
@@ -147,6 +151,7 @@ export default function Ask() {
         setLimitReached(true);
         return fail(detail?.allowance?.registered ? d.errors.tokenLimitRegistered : d.errors.tokenLimit);
       }
+      if (response.status === 503) return fail(d.errors.notConfigured);
       if (response.status === 429) return fail(d.errors.rateLimited);
       if (response.status === 504) return fail(d.errors.timeout);
       if (!response.ok) return fail(d.errors.generic);
